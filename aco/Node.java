@@ -1,18 +1,25 @@
 package aco;
 
+import java.util.List;
+
 public class Node
 {
     int id;
-    int edge0, edge1;
+    List<AcoEdge> edges;
 
     public Node(int _id, int _edge0, int _edge1)
     {
-        this.edge0 = _edge0;
-        this.edge1 = _edge1;
         this.id = _id;
     }
 
     public int getId() {
         return id;
     }
+
+    public void addAcoEdge(AcoEdge new_AcoEdge)
+    {
+        edges.add(new_AcoEdge);
+    }
+
+
 }
