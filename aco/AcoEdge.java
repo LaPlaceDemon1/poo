@@ -34,7 +34,10 @@ public class AcoEdge extends Edge
         this.events_since_evaporation++;
         probability = 1 - Math.exp(0-(events_since_evaporation/this.eta));
         
-        if (random < probability) this.pheromone_level -= this.rho;
-
+        if (random < probability) 
+        {
+            this.pheromone_level -= this.rho;
+            this.events_since_evaporation = 0;
+        }
     }
 }
