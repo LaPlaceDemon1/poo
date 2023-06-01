@@ -8,7 +8,7 @@ public class Node
     {
     this.node0 = _node0;
     this.node1 = _node1;
-    this.number = _number 
+    this.number = _number;
     }
 
 }
