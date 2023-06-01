@@ -3,7 +3,7 @@ package aco;
 public class Graph {
     int [][]edge_matrix;
     int node_number;
-    Nodes [] nodes;
+    Node [] nodes;
 
     Graph (int _node_num){
         this.node_number=_node_num;

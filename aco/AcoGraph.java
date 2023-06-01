@@ -6,6 +6,8 @@ public class AcoGraph extends Graph {
 
         super(_node_num);
         this.nest_node=_nest_node;
+    }
+    edge_matrix buildGraph(String file_name){
 
     }
 }
