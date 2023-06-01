@@ -7,7 +7,7 @@ public class Node
     int id;
     List<AcoEdge> edges;
 
-    public Node(int _id, int _edge0, int _edge1)
+    public Node(int _id)
     {
         this.id = _id;
     }
@@ -21,5 +21,5 @@ public class Node
         edges.add(new_AcoEdge);
     }
 
-
+    
 }

@@ -4,15 +4,17 @@ import java.lang.Math;
 
 public class AcoEdge extends Edge 
 {
-    double pheromone_level = 0;
+    double pheromone_level;
     double eta;
     double rho;
-    int events_since_evaporation = 0;
+    int events_since_evaporation;
     
 
-    public AcoEdge (double _weight, int _node0, int _node1, double _eta, double _rho)
+    public AcoEdge (double _weight, Node _node0, Node _node1, double _eta, double _rho)
     {
         super(_weight, _node0, _node1);
+        this.pheromone_level = 0;
+        this.events_since_evaporation = 0;
         this.eta = _eta;
         this.rho = _rho;
     }
