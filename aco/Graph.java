@@ -1,7 +1,7 @@
 package aco;
 
 public class Graph {
-    int [][]edge_matrix;
+    static int [][]edge_matrix;
     int node_number;
     Node [] nodes;
 
