@@ -1,5 +1,6 @@
 package aco;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Node
@@ -10,6 +11,7 @@ public class Node
     public Node(int _id)
     {
         this.id = _id;
+        edges = new LinkedList<AcoEdge>();
     }
 
     public int getId() {
