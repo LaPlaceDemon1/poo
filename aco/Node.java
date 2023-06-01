@@ -6,9 +6,9 @@ public class Node
     int edge0, edge1;
     public _nodes(int _number, int _node0, int _node1)
     {
-    this.node0 = _node0;
-    this.node1 = _node1;
-    this.number = _number 
+    this.edge0 = _edge0;
+    this.edge1 = _edge1;
+    this.number = _number;
     }
 
 }
