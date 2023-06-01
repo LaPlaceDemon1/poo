@@ -3,9 +3,9 @@ package aco;
 public class Edge 
 {
     double weight;
-    int node0, node1;
+    Node node0, node1;
 
-    public Edge (double _weight, int _node0, int _node1)
+    public Edge (double _weight, Node _node0, Node _node1)
     {
         this.weight = _weight;
         this.node0 = _node0;
@@ -17,9 +17,9 @@ public class Edge
         return weight;
     }
 
-    public int getNext(int currentNode) 
+    public Node getNext(Node currentNode) 
     {
-        if (currentNode == node1) return node0;
+        if (currentNode.getID() == node1.getID()) return node0;
         else return node1;
     }
 }
