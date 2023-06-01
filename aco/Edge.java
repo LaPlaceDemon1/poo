@@ -19,7 +19,7 @@ public class Edge
 
     public Node getNext(Node currentNode) 
     {
-        if (currentNode.getID() == node1.getID()) return node0;
+        if (currentNode.getId() == node1.getId()) return node0;
         else return node1;
     }
 }
