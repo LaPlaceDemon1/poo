@@ -1,26 +1,10 @@
 package pec;
 
-public abstract class Event
+public interface Event
 {
-    double time;
-    
-    public Event(double _time)
-    {
-        this.time = _time;
-    }
+    public double getTime();
 
-    public double getTime()
-    {
-        return this.time;
-    }
+    public void setTime(double _time);
 
-    public void setTime(double _time)
-    {
-        this.time = _time;
-    }
-
-    public void execute()
-    {
-        System.out.println("Executing event at time " + this.time);
-    }
+    public void execute();
 }
