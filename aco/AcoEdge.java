@@ -1,11 +1,6 @@
 package aco;
 
-import graph.Edge;
-import graph.Node;
-
-import java.lang.Math;
-
-public class AcoEdge extends Edge
+public class AcoEdge extends graph.Edge 
 {
     double pheromone_level;
     double eta;
@@ -13,11 +8,10 @@ public class AcoEdge extends Edge
     int events_since_evaporation;
     
 
-    public AcoEdge (double _weight, Node _node0, Node _node1, double _eta, double _rho)
+    public AcoEdge (double _weight, graph.Node _node0, graph.Node _node1, double _eta, double _rho)
     {
         super(_weight, _node0, _node1);
         this.pheromone_level = 0;
-        this.events_since_evaporation = 0;
         this.eta = _eta;
         this.rho = _rho;
     }
@@ -32,17 +26,8 @@ public class AcoEdge extends Edge
         this.pheromone_level += new_pheromone;
     }
 
-    public void evaporation(double random)
-    {
-        double probability;
-
-        this.events_since_evaporation++;
-        probability = 1 - Math.exp(0-(events_since_evaporation/this.eta));
-        
-        if (random < probability) 
-        {
-            this.pheromone_level -= this.rho;
-            this.events_since_evaporation = 0;
-        }
+    public void evaporation()
+    {   
+        this.pheromone_level -= this.rho;
     }
 }
