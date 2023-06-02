@@ -1,8 +1,11 @@
 package aco;
 
+import graph.Edge;
+import graph.Node;
+
 import java.lang.Math;
 
-public class AcoEdge extends Edge 
+public class AcoEdge extends Edge
 {
     double pheromone_level;
     double eta;

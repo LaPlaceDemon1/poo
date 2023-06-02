@@ -1,5 +1,7 @@
 package aco;
 
+import graph.Node;
+
 import java.util.LinkedList;
 import java.util.List;
 

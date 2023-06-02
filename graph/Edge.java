@@ -1,6 +1,6 @@
-package aco;
+package graph;
 
-public class Edge 
+public class Edge
 {
     double weight;
     Node node0, node1;
