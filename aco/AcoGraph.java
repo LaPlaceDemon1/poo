@@ -22,5 +22,6 @@ public class AcoGraph extends Graph {
         } catch (IOException e){
         e.printStackTrace();
         }
+
     }
 }
