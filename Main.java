@@ -1,0 +1,40 @@
+public class Main {
+    public void Main(String args[])
+    {
+        
+        int arguments = args.length;
+        if (arguments == 0){
+            //error
+        }
+        int i = 0;
+        
+        //decide if input arguments have flag -r or -f
+        if (args[0].equals("-r")){
+            String[] parameters = new String[arguments-1];
+            //read from command line
+            for(i=1;i<arguments; i++)
+            {
+                args[i] = parameters[i-1];
+            }
+        }
+        else if (args[0] == "-f"){
+            //read from .txt file
+        }
+        else{
+            //error
+        }
+        //if -f, read from .txt file
+
+        //if -r, read from command line
+
+
+
+        //read arguments from .txt file
+
+        //read arguments from command line
+
+
+    
+    }
+
+}
