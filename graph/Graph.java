@@ -3,16 +3,15 @@ package graph;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+import
 
 public class Graph {
     int [][]edge_matrix;
     int node_number;
     Node[] nodes;
 
-    Graph (int _node_num){
-        this.node_number=_node_num;
-        this.edge_matrix= new int [_node_num][_node_num];
+    Graph (){
+        this.node_number=0;
 
     }
     double [] buildGraph(String file_name) {
@@ -27,6 +26,9 @@ public class Graph {
                     parameters[9] = Double.parseDouble(line);
                 }
             }
+
+            this.edge_matrix=new int[(int) Math.round(parameters[0])][(int) Math.round(parameters[0])];
+            this.node_number=(int) Math.round(parameters[0]);
             int j=0;
             while ((line = reader.readLine()) != null) {
 
