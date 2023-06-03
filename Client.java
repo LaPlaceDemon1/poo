@@ -14,11 +14,12 @@ public class Client {
             //read from command line
             for(i=1;i<arguments; i++)
             {
-                args[i] = parameters[i-1];
+                parameters[i-1] = args[i];
             }
         }
         else if (args[0] == "-f"){
             //read from .txt file
+
         }
         else{
             //error
