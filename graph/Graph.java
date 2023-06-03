@@ -1,4 +1,4 @@
-package aco;
+package graph;
 
 import graph.Node;
 
