@@ -1,13 +1,11 @@
 package graph;
 
-import graph.Node;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Graph {
-    static int [][]edge_matrix;
+    int [][]edge_matrix;
     int node_number;
     Node[] nodes;
 
