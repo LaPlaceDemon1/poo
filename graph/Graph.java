@@ -14,12 +14,13 @@ public class Graph {
         this.edge_matrix= new int [_node_num][_node_num];
 
     }
-    int[][] buildGraph(String file_name) {
+    void buildGraph(String file_name) {
         String file_path="../maps"+file_name;
+        String[] strings;
         try (BufferedReader reader =new BufferedReader(new FileReader(file_path))){
             String line;
             while ((line = reader.readLine()) != null) {
-
+                strings = line.split("\t");
                 System.out.println(line);
             }
         } catch (IOException e){
