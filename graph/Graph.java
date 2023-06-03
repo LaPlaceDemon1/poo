@@ -21,6 +21,7 @@ public class Graph {
             String line;
             while ((line = reader.readLine()) != null) {
                 strings = line.split("\t");
+                boobs
                 System.out.println(line);
             }
         } catch (IOException e){
