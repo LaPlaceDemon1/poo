@@ -1,28 +1,26 @@
 package graph;
 
-import aco.AcoEdge;
-
 import java.util.LinkedList;
 import java.util.List;
 
 public class Node
 {
     int id;
-    List<AcoEdge> edges;
+    List<Edge> edges;
 
     public Node(int _id)
     {
         this.id = _id;
-        edges = new LinkedList<AcoEdge>();
+        edges = new LinkedList<Edge>();
     }
 
     public int getId() {
         return id;
     }
 
-    public void addAcoEdge(AcoEdge new_AcoEdge)
+    public void addAcoEdge(Edge new_Edge)
     {
-        edges.add(new_AcoEdge);
+        edges.add(new_Edge);
     }
 
     
