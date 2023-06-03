@@ -13,7 +13,7 @@ public class Ant
     List<Edge> path;
     double path_time;
     
-    public Ant (double _alpha, double _beta, double _delta)
+    public Ant (double _alpha, double _beta, double _delta, Node inicial_node)
     {
         this.path_time = 0;
         this.alpha = _alpha;
@@ -21,5 +21,9 @@ public class Ant
         this.delta = _delta;
         visited_nodes = new LinkedList<Integer>();
         path = new LinkedList<Edge>();
+        this.current_node = inicial_node;
+        visited_nodes.add(inicial_node.getId());
     }
+
+
 }
