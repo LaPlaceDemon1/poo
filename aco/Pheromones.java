@@ -1,11 +1,11 @@
 package aco;
 
 import java.util.Map;
-
+import graph.*;
 public class Pheromones 
 {
     float eta, rho, pheromone_level;
-    Map<graph.Edge, Float> pheromone_map;
+    Map<Edge, Float> pheromone_map;
 
     Pheromones(float _eta, float _rho, float _pheromone_level)
     {
@@ -16,7 +16,7 @@ public class Pheromones
 
     //evaporation event: the given edge has its correspnding pheromone level from pheromone_map reduced by rho, if the pheromone level is less than 0, it is set to 0
     //and the method returns false, otherwise it returns true
-    boolean evaporation(graph.Edge edge)
+    boolean evaporation(Edge edge)
     {
         float new_pheromone_level = this.pheromone_map.get(edge) - this.rho;
         if (new_pheromone_level < 0)
@@ -32,14 +32,14 @@ public class Pheromones
     }
     
     //lay pheromone event: the given edge has its corresponding pheromone level from pheromone_map increased by pheromone_level
-    void lay_pheromone(graph.Edge edge)
+    void lay_pheromone(Edge edge)
     {
         float new_pheromone_level = this.pheromone_map.get(edge) + this.pheromone_level;
         this.pheromone_map.put(edge, new_pheromone_level);
     }
 
     //get the pheromone level of the given edge
-    float get_pheromone_level(graph.Edge edge)
+    float get_pheromone_level(Edge edge)
     {
         return this.pheromone_map.get(edge);
     }
