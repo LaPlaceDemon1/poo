@@ -18,10 +18,14 @@ public class Node
         return id;
     }
 
-    public void addAcoEdge(Edge new_Edge)
+    public void addEdge(Edge new_Edge)
     {
         edges.add(new_Edge);
     }
 
+    public List<Edge> getEdges()
+    {
+        return edges;
+    }
     
 }
