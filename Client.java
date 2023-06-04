@@ -1,7 +1,9 @@
+import graph.*;
+
 public class Client {
     public void main(String args[])
     {
-
+        Graph main_graph;
         int arguments = args.length;
         if (arguments == 0){
             //error
@@ -17,7 +19,9 @@ public class Client {
                 parameters[i-1] = args[i];
             }
         }
-        else if (args[0] == "-f"){
+        else if (args[0].equals("-f"){
+
+            double[] parametres_D=main_graph.buildGraph(args[2]);
             //read from .txt file
 
         }

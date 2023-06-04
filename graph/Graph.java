@@ -13,7 +13,7 @@ public class Graph {
         this.node_number=0;
 
     }
-    double [] buildGraph(String file_name) {
+    public double [] buildGraph(String file_name) {
         String file_path="../maps"+file_name;
         String[] strings;
         double[] parameters = new double[10];
