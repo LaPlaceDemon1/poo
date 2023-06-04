@@ -1,10 +1,13 @@
 package pec;
+ abstract class Event implements IEvent{
+    int time;
 
-public interface Event
-{
-    public double getTime();
+     public double getTime(){
+        return this.time;
+     };
 
-    public void setTime(double _time);
 
-    public void execute(); 
-}
+     public int compareTo(Event that) {
+         return Double.compare(this.time,that.time);
+     }
+ }

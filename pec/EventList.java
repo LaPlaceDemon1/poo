@@ -5,22 +5,22 @@ import java.util.PriorityQueue;
 public class EventList
 {
     //the priority queue
-    private PriorityQueue<Event> events;
+    private PriorityQueue<IEvent> events;
 
     //constructor
     public EventList()
     {
-        events = new PriorityQueue<Event>();
+        events = new PriorityQueue<IEvent>();
     }
 
     //add an event to the list
-    public void add(Event _event)
+    public void add(IEvent _event)
     {
         events.add(_event);
     }
 
     //get the next event
-    public Event next()
+    public IEvent next()
     {
         return events.poll();
     }
@@ -30,4 +30,6 @@ public class EventList
     {
         return events.size();
     }
+
+
 }
