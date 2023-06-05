@@ -53,7 +53,7 @@ public class Ant
         if (unvisited_edges.size() == 0)
         {
             Edge next_edge = edges.get((int)(Math.random()*edges.size()));
-            //this.removeCycle(next_edge);
+            this.removeCycle(next_edge);
             return next_edge;
         }
         else
@@ -75,22 +75,23 @@ public class Ant
             }
             return null;
         }
-
-        private void removeCycle(Edge next_edge)
-        {
-            int node_to_keep = next_edge.getNext(this.current_node);
-            int index = this.visited_nodes.indexOf(node_to_keep);
-
-            for (int i = index+1; i < this.visited_nodes.size(); i++)
-            {
-                this.visited_nodes.remove(i);
-                this.path.remove(i-1);
-                this.path_times.remove(i-1);
-            }
-        }
     }
 
+    private void removeCycle(Edge next_edge)
+    {
+        int node_to_keep = next_edge.getNext(this.current_node).getId();
+        int index = this.visited_nodes.indexOf(node_to_keep);
 
-
-
+        for (int i = index+1; i < this.visited_nodes.size(); i++)
+        {
+            this.visited_nodes.remove(i);
+            this.path.remove(i-1);
+            this.path_times.remove(i-1);
+        }
+    }
 }
+
+
+
+
+
