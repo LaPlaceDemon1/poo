@@ -24,6 +24,7 @@ public class Ant
         this.beta = _beta;
         this.delta = _delta;
         this.visited_nodes = new ArrayList<Node>();
+        this.visited_nodes.add(inicial_node);
         this.path = new ArrayList<Edge>();
         this.current_node = inicial_node;
         this.visited_nodes.add(inicial_node);
@@ -55,10 +56,10 @@ public class Ant
         }
         if (unvisited_edges.size() == 0)
         {
-            for (Edge edge : edges)
+            //verify if edge.getNext is the same as the first element of visited_nodes
+            if(visited_nodes.size() == this.num_nodes)
             {
-                //verify if edge.getNext is the same as the first element of visited_nodes
-                if(visited_nodes.size() == this.num_nodes)
+                for (Edge edge : edges)
                 {
                     if(edge.getNext(this.current_node).isEqual(visited_nodes.get(0)))
                     {
