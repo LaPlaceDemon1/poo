@@ -23,6 +23,12 @@ public class Node
         edges.add(new_Edge);
     }
 
+    public boolean isEqual(Node other_node)
+    {
+        return (this.id == other_node.getId());
+    }
+
+
     public List<Edge> getEdges()
     {
         return edges;
