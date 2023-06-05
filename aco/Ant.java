@@ -52,6 +52,12 @@ public class Ant
         }
         if (unvisited_edges.size() == 0)
         {
+            for (Edge edge : edges)
+            {
+                //TODO verify if this is the last node and if there is an edge to nest node
+                //if(edge.getNext(this.current_node).getId();
+            }
+            
             Edge next_edge = edges.get((int)(Math.random()*edges.size()));
             this.removeCycle(next_edge);
             return next_edge;
