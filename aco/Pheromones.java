@@ -1,5 +1,6 @@
 package aco;
 
+import java.util.ArrayList;
 import java.util.Map;
 import graph.*;
 public class Pheromones 
@@ -31,10 +32,18 @@ public class Pheromones
     }
     
     //lay pheromone event: the given edge has its corresponding pheromone level from pheromone_map increased by pheromone_level
-    void lay_pheromone(Edge edge, double pheromone_level)
+    void lay_pheromone(ArrayList<Edge> edges, double pheromone_level)
     {
-        double new_pheromone_level = this.pheromone_map.get(edge) + pheromone_level;
-        this.pheromone_map.put(edge, new_pheromone_level);
+        double total_weight = 0;
+        for (Edge edge : edges)
+        {
+            total_weight += edge.getWeight();
+        }
+        for (Edge edge : edges)
+        {
+            double new_pheromone_level = this.pheromone_map.get(edge) + ((pheromone_level*edge.getWeight())/total_weight);
+            this.pheromone_map.put(edge, new_pheromone_level);
+        }
     }
 
     //get the pheromone level of the given edge
