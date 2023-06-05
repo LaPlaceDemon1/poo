@@ -5,13 +5,14 @@ import java.util.Map;
 import graph.*;
 public class Pheromones 
 {
-    double eta, rho;
+    double eta, rho, pheromone_level;
     Map<Edge, Double> pheromone_map;
 
-    Pheromones(double _eta, double _rho)
+    Pheromones(double _eta, double _rho, double _pheromone_level)
     {
         this.eta = _eta;
         this.rho = _rho;
+        this.pheromone_level = _pheromone_level;
     }
 
     //evaporation event: the given edge has its correspnding pheromone level from pheromone_map reduced by rho, if the pheromone level is less than 0, it is set to 0
@@ -32,7 +33,7 @@ public class Pheromones
     }
     
     //lay pheromone event: the given edge has its corresponding pheromone level from pheromone_map increased by pheromone_level
-    void lay_pheromone(ArrayList<Edge> edges, double pheromone_level)
+    void lay_pheromone(ArrayList<Edge> edges) //TODO: check for events
     {
         double total_weight = 0;
         for (Edge edge : edges)
@@ -41,7 +42,7 @@ public class Pheromones
         }
         for (Edge edge : edges)
         {
-            double new_pheromone_level = this.pheromone_map.get(edge) + ((pheromone_level*edge.getWeight())/total_weight);
+            double new_pheromone_level = this.pheromone_map.get(edge) + ((this.pheromone_level*edge.getWeight())/total_weight);
             this.pheromone_map.put(edge, new_pheromone_level);
         }
     }
@@ -51,7 +52,6 @@ public class Pheromones
     {
         return this.pheromone_map.get(edge);
     }
-
 
 
 

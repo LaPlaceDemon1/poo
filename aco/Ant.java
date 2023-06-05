@@ -30,7 +30,7 @@ public class Ant
         this.visited_nodes.add(inicial_node);
     }
 
-    public void move(Map<Edge, Float> pheromone_map)
+    public double move(Map<Edge, Float> pheromone_map) //TODO: fix input type
     {
         Edge next_edge = this.chooseNextEdge(pheromone_map);
         this.path.add(next_edge);
@@ -38,6 +38,9 @@ public class Ant
         this.path_times.add(next_edge.getWeight() * (1 - Math.exp(Math.random()/(-this.delta))));
         this.current_node = next_edge.getNext(this.current_node);
         this.visited_nodes.add(this.current_node);
+        //if this.visited_nodes.size() == this.num_nodes, lay_pheromone on path
+        //TODO
+        return this.path_times.get(this.path_times.size()-1);
     }
 
     //choose the next edge to be visited by the ant, based on the pheromone level in pheromone_map from Pheromones
@@ -77,7 +80,7 @@ public class Ant
             double sum = 0;
             for (Edge edge : unvisited_edges)
             {
-                sum += (pheromone_map.get(edge)+this.alpha) / (edge.getWeight() + this.beta);
+                sum += (pheromone_map.get(edge) + this.alpha) / (edge.getWeight() + this.beta);
             }
             double random = Math.random()*sum;
             double partial_sum = 0;
