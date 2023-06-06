@@ -5,7 +5,6 @@ import graph.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 public class Ant 
 {
@@ -30,7 +29,7 @@ public class Ant
         this.visited_nodes.add(inicial_node);
     }
 
-    public double move(Map<Edge, Float> pheromone_map) //TODO: fix input type
+    public double move(Pheromones pheromone_map) //TODO: fix input type
     {
         Edge next_edge = this.chooseNextEdge(pheromone_map);
         this.path.add(next_edge);
@@ -39,14 +38,14 @@ public class Ant
         this.current_node = next_edge.getNext(this.current_node);
         this.visited_nodes.add(this.current_node);
         //if this.visited_nodes.size() == this.num_nodes, lay_pheromone on path
-        //TODO
+        //TODO-new event event add
         return this.path_times.get(this.path_times.size()-1);
     }
 
     //choose the next edge to be visited by the ant, based on the pheromone level in pheromone_map from Pheromones
     //visited edges are not considered, if all edges are visited, choose one randomly and remove all nodes that form a cycle
     //the probabilisties of choosing an edge are calculated using the formula: (pheromone_level+alpha)*(1/edge_weight+beta)
-    private Edge chooseNextEdge(Map<Edge, Float> pheromone_map)
+    private Edge chooseNextEdge(Pheromones pheromones)
     {
         List<Edge> edges = this.current_node.getEdges();
         List<Edge> unvisited_edges = new LinkedList<Edge>();
@@ -80,13 +79,13 @@ public class Ant
             double sum = 0;
             for (Edge edge : unvisited_edges)
             {
-                sum += (pheromone_map.get(edge) + this.alpha) / (edge.getWeight() + this.beta);
+                sum += (pheromones.pheromone_map.get(edge) + this.alpha) / (edge.getWeight() + this.beta);
             }
             double random = Math.random()*sum;
             double partial_sum = 0;
             for (Edge edge : unvisited_edges)
             {
-                partial_sum += (pheromone_map.get(edge)+this.alpha) / (edge.getWeight() + this.beta);
+                partial_sum += (pheromones.pheromone_map.get(edge)+this.alpha) / (edge.getWeight() + this.beta);
                 if (partial_sum >= random)
                 {
                     return edge;
