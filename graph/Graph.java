@@ -22,7 +22,8 @@ public class Graph {
             if ((line = reader.readLine()) != null) {
                 strings = line.split("\t");
                 for(int i =0; i<10 ; i++ ){
-                    parameters[9] = Double.parseDouble(line);
+                    parameters[i] = Double.parseDouble(strings[i]);
+                    System.out.println(parameters[i]);
                 }
             }
 
