@@ -9,7 +9,7 @@ public class Graph {
     int node_number;
     Node[] nodes;
 
-    Graph (){
+    public Graph (){
         this.node_number=0;
 
     }
