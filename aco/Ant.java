@@ -29,16 +29,18 @@ public class Ant
         this.visited_nodes.add(inicial_node);
     }
 
-    public double move(Pheromones pheromone_map) //TODO: fix input type
+    public double move(Pheromones pheromones)
     {
-        Edge next_edge = this.chooseNextEdge(pheromone_map);
+        Edge next_edge = this.chooseNextEdge(pheromones);
         this.path.add(next_edge);
         //add the time it takes to traverse the edge to the path_times list, the time is the product of edge wieght and an exponential distribution with mean delta
         this.path_times.add(next_edge.getWeight() * (1 - Math.exp(Math.random()/(-this.delta))));
         this.current_node = next_edge.getNext(this.current_node);
         this.visited_nodes.add(this.current_node);
-        //if this.visited_nodes.size() == this.num_nodes, lay_pheromone on path
-        //TODO-new event event add
+        if (this.visited_nodes.size() == this.num_nodes + 1)
+        {
+            pheromones.lay_pheromone(this.path);
+        }
         return this.path_times.get(this.path_times.size()-1);
     }
 
