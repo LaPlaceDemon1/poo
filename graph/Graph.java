@@ -14,7 +14,7 @@ public class Graph {
 
     }
     public double [] buildGraph(String file_name) {
-        String file_path="../maps"+file_name;
+        String file_path=file_name;
         String[] strings;
         double[] parameters = new double[10];
         try (BufferedReader reader =new BufferedReader(new FileReader(file_path))){
