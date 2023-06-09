@@ -20,7 +20,7 @@ public class Node
 
     public void addEdge(Edge new_Edge)
     {
-        edges.add(new_Edge);
+        this.edges.add(new_Edge);
     }
 
     public boolean isEqual(Node other_node)
