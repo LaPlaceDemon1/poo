@@ -18,4 +18,7 @@ public class Aco {
         this.rho = _rho;
         this.pheromone_level = _pheromone_level;
     }
+
+
+
 }

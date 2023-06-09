@@ -9,7 +9,7 @@ public class Pheromones
     double eta, rho, pheromone_level;
     Map<Edge, Double> pheromone_map;
 
-    Pheromones(double _eta, double _rho, double _pheromone_level, List<Edge> edges)
+    public Pheromones(double _eta, double _rho, double _pheromone_level, List<Edge> edges)
     {
         this.eta = _eta;
         this.rho = _rho;

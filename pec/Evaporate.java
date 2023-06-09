@@ -1,14 +1,29 @@
 package pec;
 import aco.*;
 import graph.*;
+import java.util.Random;
+
+import java.util.HashMap;
+
 public class Evaporate extends Event {
 	Edge phero_edge;
-	Evaporate(double _time){
-		this.time = 0;
+	Pheromones pheromones;
+	Double exp_mean;
+	Evaporate(double _time, Pheromones _pheromones, Edge _phero_edge,Double _exp_mean){
+		phero_edge=_phero_edge;
+		this.time = _time;
+		pheromones=_pheromones;
+		exp_mean=_exp_mean;
 	}
-
+	private void schedule_next(EventList sim,Evaporate next){
+		sim.add(next);
+	}
 	@Override
-	public void execute() {
+	public void execute(EventList sim) {
+		Random random = new Random();
+		double randomValue = -exp_mean * Math.log(1 - random.nextDouble());
+
 		pheromones.evaporation(phero_edge);
+		schedule_next(sim,new Evaporate(time+randomValue, pheromones, phero_edge, exp_mean));
 	}
 }
