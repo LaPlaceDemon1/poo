@@ -1,5 +1,8 @@
 package pec;
- abstract class Event implements IEvent{
+
+import aco.Pheromones;
+
+abstract class Event implements IEvent{
     double time;
 
      public double getTime(){
@@ -10,7 +13,7 @@ package pec;
          this.time=_time;
      }
 
-     public void execute(){
+     public void execute(Object o){
          return ;
      }
 
