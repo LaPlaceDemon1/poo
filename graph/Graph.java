@@ -56,7 +56,7 @@ public class Graph {
             for(int j=0; j<this.node_number;j++){
                 if(this.edge_matrix[i][j]!=0) {
                     if (i < j) {
-                        Edge e=new Edge(edge_matrix[i][j],nodes.get(i),nodes.get(j))
+                        Edge e=new Edge(edge_matrix[i][j],nodes.get(i),nodes.get(j));
                         nodes.get(i).addEdge(e);
                         nodes.get(j).addEdge(e);
                     }
