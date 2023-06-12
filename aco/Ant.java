@@ -40,9 +40,6 @@ public class Ant {
         this.visited_nodes.add(this.current_node);
         if (this.visited_nodes.size() == this.num_nodes + 1) {
             pheromones.lay_pheromone(this.path, sim, time);
-        } else {
-            sim.add(new Move(time + this.path_times.get(this.path_times.size() - 1),
-                    this, pheromones));
         }
         return this.path_times.get(this.path_times.size() - 1);
     }
