@@ -52,12 +52,7 @@ public class Client {
                        ant_colony.pheromone_level, main_graph.getEdges()
                       );
 
-    ArrayList<Ant> ants = new ArrayList<>();
-    for (i = 0; i < ant_colony.colony_size; i++) {
-      ants.add(new Ant(
-                      (int)ant_colony.num_nodes,ant_colony.alpha, ant_colony.beta, ant_colony.delta,
-                      main_graph.getNode( (int)ant_colony.nest_node)
-                      ));
-    }
+
+
   } 
 }
