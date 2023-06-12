@@ -1,6 +1,5 @@
 import aco.*;
 import graph.*;
-import java.util.ArrayList;
 import pec.*;
 /*
 parameters:
@@ -22,7 +21,7 @@ public class Client {
       System.out.println("Invalid input");
       System.exit(0);
     }
-    int i = 0;
+    int i;
     double[] parameters = new double[11];
 
     // decide if input arguments have flag -r or -f``j
