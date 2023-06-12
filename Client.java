@@ -34,9 +34,10 @@ public class Client {
       main_graph.generateGraph(parameters[0], parameters[1]);
     } else if (args[0].equals("-f")) {
 
-      double[] parametres = main_graph.buildGraph(args[1]);
+      parameters = main_graph.buildGraph(args[1]);
       // read from .txt file
     } else {
+      System.out.println("Invalid input");
       // error
     }
 
