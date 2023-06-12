@@ -3,36 +3,35 @@ package pec;
 import aco.*;
 import graph.*;
 
-import java.util.ArrayList;
-
 public class Simulation {
 	// aqui é onde a magia acontece
 
 	Pheromones phero;
 	EventList simqueue;
 	Aco context;
+	Graph graph;
 
-	public Simulation(Aco _context, Graph graph) {
+	public Simulation(Aco _context, Graph _graph) {
 		this.context = _context;
-		phero = new Pheromones(context.getEta(),context.getRho(),context.getPheromoneLevel(),graph.getEdges());
+		this.graph = _graph;
+		phero = new Pheromones(context.getEta(), context.getRho(),
+				context.getPheromoneLevel(), graph.getEdges());
 		simqueue = new EventList();
-
 	}
 
-	public void run(Graph graph) {
-		for(Ant ant: context.getAnts()) {
+	public void run() {
+		for (Ant ant : context.getAnts()) {
 			simqueue.add(new Move(0.0, ant, phero));
 		}
-		//cycle 19 times
-		printParameters(context,graph);
+		printParameters(this.context, this.graph);
+
 		for (int i = 1; i < 20; i++) {
-			simqueue.add(new Observation(i * context.final_time/20,i,context));
+			simqueue.add(new Observation(i * context.final_time / 20, i, context));
 		}
-		simqueue.add(new End(context.getFinalTime(),context));  // end of simulation
+		simqueue.add(new End(context.getFinalTime(), context)); // end of simulation
 		while (simqueue.size() > 0) {
 			Event next = simqueue.removeFirst();
 			next.execute(simqueue);
-
 		}
 	}
 
@@ -51,6 +50,7 @@ public class Simulation {
 		System.out.println("with graph:");
 		graph.printGraph();
 	}
+
 	public void end(Aco context) {
 	}
 
