@@ -32,7 +32,7 @@ public class Simulation {
 		System.out.println("checkpoint:");
 		System.out.println("present instant:"+ time);
 		System.out.println("Top candidate cycles:");
-		System.out.println("Number of move events:");
+		System.out.println("Number of move events:"+context.getNumMovs());
 		System.out.println("Best Hamiltonian cycle: :");
 	}
 }

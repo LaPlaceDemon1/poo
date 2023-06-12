@@ -44,7 +44,9 @@ public class Graph {
                 strings = line.split("\t");
 
                 for (int i = 0; i < parameters[0]; i++) {
-                    this.edge_matrix[j][i] = Double.parseDouble(strings[i]);
+                    for (j = 0; j < parameters[0]; j++){
+                        this.edge_matrix[j][i] = Double.parseDouble(strings[j]);
+                    }
                 }
                 System.out.println(line);
             }
