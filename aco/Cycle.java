@@ -19,4 +19,14 @@ public class Cycle {
       System.out.println("}: " + this.cost);
     }
   }
+
+  public int compareTo(Cycle other) {
+    if (this.cost < other.cost) {
+      return -1;
+    } else if (this.cost > other.cost) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
 }
