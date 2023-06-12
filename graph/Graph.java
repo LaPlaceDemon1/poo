@@ -138,5 +138,9 @@ public class Graph {
 
         return parameters;
     }
+
+    public Node getNode(int i) {
+        return nodes.get(i);
+    }
 }
 

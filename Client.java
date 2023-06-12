@@ -22,7 +22,7 @@ public class Client {
       System.exit(0);
     }
     int i = 0;
-    double[] parameters = new double[10];
+    double[] parameters = new double[11];
 
     // decide if input arguments have flag -r or -f``j
     if (args[0].equals("-r")) {
@@ -39,21 +39,24 @@ public class Client {
     } else {
       // error
     }
-/*
-    Aco ant_colony = new Aco(parameters[0], parameters[1], parameters[3],
-                             parameters[4], parameters[5], parameters[6],
-                             parameters[7], parameters[8], parameters[9]);
+
+    Aco ant_colony = new Aco(parameters[0],parameters[2],parameters[3],
+                              parameters[4],parameters[5],parameters[6],
+                              parameters[7],parameters[8],parameters[9],
+                              parameters[10]
+                            );
 
     Pheromones pheromones =
         new Pheromones(ant_colony.eta, ant_colony.rho,
-                       ant_colony.pheromone_level, main_graph.getEdges());
+                       ant_colony.pheromone_level, main_graph.getEdges()
+                      );
 
     ArrayList<Ant> ants = new ArrayList<>();
     for (i = 0; i < ant_colony.colony_size; i++) {
-      ants.add(
-        new Ant(ant_colony.alpha, ant_colony.beta, ant_colony.delta,
-          main_graph.getNodes().get(Integer parseInteger(
-                     ant_colony.nest_node)))); // TODO solve error nest node
-    } */
+      ants.add(new Ant(
+                      (int)ant_colony.num_nodes,ant_colony.alpha, ant_colony.beta, ant_colony.delta,
+                      main_graph.getNode( (int)ant_colony.nest_node)
+                      ));
+    }
   } 
 }
