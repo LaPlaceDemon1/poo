@@ -1,22 +1,38 @@
 package pec;
 import graph.*;
-import aco.Pheromones;
+import aco.*;
 
 public class Simulation {
 	//aqui é onde a magia acontece
+
+	Pheromones phero;
+	EventList simqueue;
 	public Simulation(double[] arguments){
 
-		Pheromones phero= new Pheromones(arguments[0],arguments[0],arguments[0],null);//mudar os argumentos
-		EventList simqueue= new EventList();
+		phero= new Pheromones(arguments[0],arguments[0],arguments[0],null);//mudar os argumentos
+		simqueue= new EventList();
 		simqueue.add(null);
 
+	}
+	public void run(){
 		while(simqueue.size()>0){
 			Event next=simqueue.removeFirst();
 			next.execute(simqueue);
 		}
 
-
-
-
+	}
+	public void end (Aco context){
+		System.out.println("checkpoint");
+		System.out.println("present instant:"+ context.getFinalTime());
+		System.out.println("Top candidate cycles:");
+		System.out.println("Number of move events:"+ context.getNumMovs());
+		System.out.println("Best Hamiltonian cycle:");
+	}
+	public void checkpoint(Aco context, Double time){
+		System.out.println("checkpoint:");
+		System.out.println("present instant:"+ time);
+		System.out.println("Top candidate cycles:");
+		System.out.println("Number of move events:");
+		System.out.println("Best Hamiltonian cycle: :");
 	}
 }
