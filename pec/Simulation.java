@@ -1,5 +1,5 @@
 package pec;
-
+import graph.*;
 import aco.Pheromones;
 
 public class Simulation {
@@ -9,7 +9,7 @@ public class Simulation {
 		Pheromones phero= new Pheromones(arguments[0],arguments[0],arguments[0],null);//mudar os argumentos
 		EventList simqueue= new EventList();
 		simqueue.add(null);
-		//cycle
+
 		while(simqueue.size()>0){
 			Event next=simqueue.removeFirst();
 			next.execute(simqueue);

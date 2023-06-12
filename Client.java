@@ -1,9 +1,20 @@
 import aco.*;
 import graph.*;
 import java.util.ArrayList;
+/*
+parameters:
+0  n number of nodes in the graph
+2  a max edge weight
+3  n1 the nest node
+4,5,6  α, β, δ parameters concerning the ant move event
+7,8  η, ρ parameters concerning the pheromone evaporation event
+9  γ parameter concerning pheromone level
+10 ν ant colony size
+11 τ final instant
 
+* */
 public class Client {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     Graph main_graph = new Graph();
     if (args.length == 0) {
       // error
