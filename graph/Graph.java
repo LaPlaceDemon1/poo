@@ -24,7 +24,7 @@ public class Graph {
             String line;
             if ((line = reader.readLine()) != null) {
                 strings = line.split("\t");
-                for (int i = 0; i < 11; i++) {
+                for (int i = 0; i < 10; i++) {
                     if (i == 1) {
                         parameters[i] = -1;
                         i++;
