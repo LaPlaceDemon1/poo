@@ -29,7 +29,7 @@ public class Ant
         this.visited_nodes.add(inicial_node);
     }
 
-    public double move(Pheromones pheromones)
+    public double moveAnt(Pheromones pheromones)
     {
         Edge next_edge = this.chooseNextEdge(pheromones);
         this.path.add(next_edge);

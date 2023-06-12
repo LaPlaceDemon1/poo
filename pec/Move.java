@@ -1,9 +1,11 @@
 package pec;
 
-import aco.Pheromones;
+import aco.*;
 
 public class Move extends Event{
-	public Move(Pheromones pheromones){
+	public Move(Double _time,Pheromones pheromones){
+		super(_time);
+		move(pheromones);
 
 
 	}
