@@ -5,16 +5,16 @@ import java.util.PriorityQueue;
 public class EventList
 {
     //the priority queue
-    private PriorityQueue<IEvent> events;
+    private final PriorityQueue<Event> events;
 
     //constructor
     public EventList()
     {
-        events = new PriorityQueue<IEvent>();
+        events = new PriorityQueue<Event>();
     }
 
     //add an event to the list
-    public void add(IEvent _event)
+    public void add(Event _event)
     {
         events.add(_event);
     }

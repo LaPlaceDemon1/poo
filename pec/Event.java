@@ -24,4 +24,7 @@ abstract class Event implements IEvent{
      public int compareTo(Event that) {
          return Double.compare(this.time,that.time);
      }
+    void schedule_next(EventList sim, Event next){
+        sim.add(next);
+    }
  }
