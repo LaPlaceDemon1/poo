@@ -40,4 +40,40 @@ public class Aco {
     public double getAlpha() {
         return this.alpha;
     }
+
+    public double getBeta() {
+        return this.beta;
+    }
+
+    public double getDelta() {
+        return this.delta;
+    }
+
+    public double getEta() {
+        return this.eta;
+    }
+
+    public double getRho() {
+        return this.rho;
+    }
+
+    public double getPheromoneLevel() {
+        return this.pheromone_level;
+    }
+
+    public double getFinalTime() {
+        return this.final_time;
+    }
+
+    public double getNumMovs() {
+        return this.num_movs;
+    }
+
+    public double getNumEvap() {
+        return this.num_evap;
+    }
+
+    public PriorityQueue<Cycle> getCycles() {
+        return this.cycles;
+    }
 }
