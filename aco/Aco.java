@@ -74,10 +74,14 @@ public class Aco {
     }
 
     public void printTopCycles() {
-        ArrayList<Cycle> aux = new ArrayList<Cycle>();
-        for (int i = 0; (i < this.cycles.size()) || (i < 5); i++) {
-            aux.add(this.cycles.poll());
-            aux.get(i).printCycle();
+        if (this.cycles.size() > 0) {
+            ArrayList<Cycle> aux = new ArrayList<Cycle>();
+            for (int i = 0; (i < this.cycles.size()) || (i < 5); i++) {
+                aux.add(this.cycles.poll());
+                aux.get(i).printCycle();
+            }
+        } else {
+            System.out.println("\t\t{}");
         }
     }
 
@@ -86,6 +90,8 @@ public class Aco {
             Cycle best = this.cycles.poll();
             best.printCycle();
             cycles.add(best);
+        } else {
+            System.out.println("\t\t{}");
         }
     }
 
