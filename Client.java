@@ -4,13 +4,13 @@ import java.util.ArrayList;
 /*
 parameters:
 0  n number of nodes in the graph
-2  a max edge weight
-3  n1 the nest node
-4,5,6  α, β, δ parameters concerning the ant move event
-7,8  η, ρ parameters concerning the pheromone evaporation event
-9  γ parameter concerning pheromone level
-10 ν ant colony size
-11 τ final instant
+1  a max edge weight
+2  n1 the nest node
+3,4,5  α, β, δ parameters concerning the ant move event
+6,7  η, ρ parameters concerning the pheromone evaporation event
+8  γ parameter concerning pheromone level
+9 ν ant colony size
+10 τ final instant
 
 * */
 public class Client {

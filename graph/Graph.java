@@ -20,19 +20,25 @@ public class Graph {
     public double[] buildGraph(String file_path) {
         String[] strings;
         double[] parameters = new double[10];
+        int j = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader(file_path))) {
             String line;
             if ((line = reader.readLine()) != null) {
                 strings = line.split("\t");
-                for (int i = 0; i < 10; i++) {
-                    parameters[i] = Double.parseDouble(strings[i]);
+                for (int i = 0; i < 11; i++) {
+                    if (i==1){
+                        parameters[i] = -1;
+                        i++;
+                    }
+                    parameters[i] = Double.parseDouble(strings[j]);
                     System.out.println(parameters[i]);
+                    j++;
                 }
             }
 
             this.edge_matrix = new double[(int) Math.round(parameters[0])][(int) Math.round(parameters[0])];
             this.node_number = (int) Math.round(parameters[0]);
-            int j = 0;
+            j = 0;
             while ((line = reader.readLine()) != null) {
 
                 strings = line.split("\t");
