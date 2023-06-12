@@ -31,5 +31,8 @@ public class EventList
         return events.size();
     }
 
+    //remove first
+    public Event removeFirst(){return events.poll();}
+
 
 }
