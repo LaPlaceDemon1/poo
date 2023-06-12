@@ -17,7 +17,9 @@ public class Client {
   public static void main(String[] args) {
     Graph main_graph = new Graph();
     if (args.length == 0) {
-      // error
+      // error exit with message invalid input
+      System.out.println("Invalid input");
+      System.exit(0);
     }
     int i = 0;
     double[] parameters = new double[10];
