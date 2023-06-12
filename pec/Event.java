@@ -16,7 +16,7 @@ abstract class Event implements IEvent {
     }
 
     public void execute(EventList sim) {}
-
+	@Override
     public int compareTo(Event that) {return Double.compare(this.time, that.time);}
 
     void schedule_next(EventList sim, Event next) {
