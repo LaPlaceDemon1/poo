@@ -8,17 +8,20 @@ import java.util.ArrayList;
 public class Graph {
     double[][] edge_matrix;
     int node_number;
-    int failsafe = 0;
+    int failsafe;
     ArrayList<Node> nodes;
     ArrayList<Edge> edges;
 
     public Graph() {
         this.node_number = 0;
+        this.failsafe = 0;
+        this.nodes = new ArrayList<>();
+        this.edges = new ArrayList<>();
     }
 
     public double[] buildGraph(String file_path) {
         String[] strings;
-        double[] parameters = new double[10];
+        double[] parameters = new double[11];
         int j = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader(file_path))) {
             String line;
@@ -30,9 +33,10 @@ public class Graph {
                         i++;
                     }
                     parameters[i] = Double.parseDouble(strings[j]);
-                    System.out.println(parameters[i]);
+                    System.out.print(parameters[i] + " ");
                     j++;
                 }
+                System.out.println();
             }
 
             this.edge_matrix = new double[(int) Math.round(parameters[0])][(int) Math.round(parameters[0])];

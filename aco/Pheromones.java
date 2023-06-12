@@ -2,6 +2,7 @@ package aco;
 
 import graph.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import pec.*;
@@ -15,6 +16,7 @@ public class Pheromones {
         this.eta = _eta;
         this.rho = _rho;
         this.pheromone_level = _pheromone_level;
+        this.pheromone_map = new HashMap<Edge, Double>();
         for (Edge edge : edges) {
             this.pheromone_map.put(edge, 0.0d);
         }
