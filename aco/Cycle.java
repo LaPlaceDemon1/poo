@@ -10,7 +10,7 @@ public class Cycle {
   }
 
   public void printCycle() {
-    System.out.print("{");
+    System.out.print("\t\t{");
     for (int i = 0; i < this.nodes.length; i++) {
       System.out.print(this.nodes[i]);
       if (i < this.nodes.length - 1) {

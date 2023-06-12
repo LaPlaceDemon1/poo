@@ -1,8 +1,8 @@
 package aco;
 
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-// definir o numero das vareaveis dos parametros como o nome dos parametros
 public class Aco {
     public double num_nodes, nest_node, colony_size;
     public double alpha, beta, delta, eta, rho, pheromone_level, final_time;
@@ -73,7 +73,23 @@ public class Aco {
         return this.num_evap;
     }
 
-    public PriorityQueue<Cycle> getCycles() {
-        return this.cycles;
+    public void printTopCycles() {
+        ArrayList<Cycle> aux = new ArrayList<Cycle>();
+        for (int i = 0; (i < this.cycles.size()) || (i < 5); i++) {
+            aux.add(this.cycles.poll());
+            aux.get(i).printCycle();
+        }
+    }
+
+    public void printBestCycle() {
+        if (this.cycles.size() > 0) {
+            Cycle best = this.cycles.poll();
+            best.printCycle();
+            cycles.add(best);
+        }
+    }
+
+    public void addCycle(Cycle cycle) {
+        this.cycles.add(cycle);
     }
 }
