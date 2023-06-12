@@ -94,7 +94,7 @@ public class Ant {
         Node node_to_keep = next_edge.getNext(this.current_node);
         int index = this.visited_nodes.indexOf(node_to_keep);
 
-        for (int i = index + 1; i < this.visited_nodes.size(); i++) {
+        for (int i = index + 1; i < this.visited_nodes.size(); ) {//TODO check index
             this.visited_nodes.remove(i);
             this.path.remove(i - 1);
             this.path_times.remove(i - 1);
