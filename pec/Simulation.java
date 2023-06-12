@@ -9,10 +9,9 @@ public class Simulation {
 	Pheromones phero;
 	EventList simqueue;
 
-	public Simulation(double[] arguments) {
+	public Simulation(Aco context, Graph graph) {
 
-		phero = new Pheromones(arguments[0], arguments[0], arguments[0],
-				null); // mudar os argumentos
+		phero = new Pheromones(context.getEta(),context.getRho(),context.getPheromoneLevel(),graph.getEdges());
 		simqueue = new EventList();
 		simqueue.add(null);
 	}
