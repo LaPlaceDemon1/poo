@@ -2,8 +2,8 @@ package aco;
 
 // definir o numero das vareaveis dos parametros como o nome dos parametros
 public class Aco {
-    double num_nodes, nest_node, colony_size;
-    double alpha, beta, delta, eta, rho, pheromone_level;
+    public double num_nodes, nest_node, colony_size;
+    public double alpha, beta, delta, eta, rho, pheromone_level;
 
     public Aco(double _num_nodes, double _nest_node, double _alpha, double _beta,
             double _delta, double _eta, double _rho, double _pheromone_level,
@@ -18,7 +18,4 @@ public class Aco {
         this.rho = _rho;
         this.pheromone_level = _pheromone_level;
     }
-
-
-
 }

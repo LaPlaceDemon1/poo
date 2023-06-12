@@ -25,16 +25,10 @@ public class Client {
     }
 
     Aco ant_colony = new Aco(parameters[0], parameters[1], parameters[3],
-                             parameters[4], parameters[5], parameters[6],
-                             parameters[7], parameters[8], parameters[9]);
+        parameters[4], parameters[5], parameters[6],
+        parameters[7], parameters[8], parameters[9]);
 
-        Pheromones pheromones = new Peromones(ant_colony.eta, ant_colony.rho, ant_colony.pheromone_level, //TODO List<Edges>)
-        // if -f, read from .txt file
-
-        // if -r, read from command line
-
-        // read arguments from .txt file
-
-        // read arguments from command line
+    Pheromones pheromones = new Pheromones(ant_colony.eta, ant_colony.rho,
+        ant_colony.pheromone_level, main_graph.getEdges());
   }
 }
