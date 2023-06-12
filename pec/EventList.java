@@ -8,7 +8,7 @@ public class EventList {
 
     // constructor
     public EventList() {
-        events = new PriorityQueue<Event>();
+        events = new PriorityQueue<Event>(Event::compareTo);
     }
 
     // add an event to the list
