@@ -27,9 +27,5 @@ public class Evaporate extends Event {
 		schedule_next(sim,new Evaporate(time+randomValue, pheromones, phero_edge, exp_mean));
 	}
 
-	@Override
-	public int compareTo(IEvent other) {
-		return 0;
-	}
 
 }
