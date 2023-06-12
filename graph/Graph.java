@@ -107,6 +107,12 @@ public class Graph {
                 break;
             } else {
                 has_hamiltionian_cycle = true;
+                //print the hamiltionian cycle
+                System.out.println("hamiltionian cycle");
+                for (int j = 0; j < this.node_number; j++) {
+                    System.out.print(nodes.get(j).getId() + " ");
+                }
+                System.out.println();
             }
         }
         if (!has_hamiltionian_cycle) {
