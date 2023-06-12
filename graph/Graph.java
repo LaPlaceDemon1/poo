@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
 public class Graph {
     double[][] edge_matrix;
     int node_number;
@@ -26,7 +25,7 @@ public class Graph {
             if ((line = reader.readLine()) != null) {
                 strings = line.split("\t");
                 for (int i = 0; i < 11; i++) {
-                    if (i==1){
+                    if (i == 1) {
                         parameters[i] = -1;
                         i++;
                     }
@@ -44,7 +43,7 @@ public class Graph {
                 strings = line.split("\t");
 
                 for (int i = 0; i < parameters[0]; i++) {
-                    for (j = 0; j < parameters[0]; j++){
+                    for (j = 0; j < parameters[0]; j++) {
                         this.edge_matrix[j][i] = Double.parseDouble(strings[j]);
                     }
                 }
@@ -81,8 +80,8 @@ public class Graph {
     }
 
     public double[] generateGraph(double number_of_nodes, double max_weight) {
-    
-        //genereate a random hamiltionian cycle with number of nodes and max weight
+
+        // genereate a random hamiltionian cycle with number of nodes and max weight
         double[] parameters = new double[10];
         parameters[0] = number_of_nodes;
         parameters[1] = max_weight;
@@ -107,7 +106,7 @@ public class Graph {
             }
         }
 
-        //verify if the graph has a hamiltionian cycle
+        // verify if the graph has a hamiltionian cycle
         boolean has_hamiltionian_cycle = false;
         for (int i = 0; i < this.node_number; i++) {
             if (nodes.get(i).getEdges().size() < 2) {
@@ -115,20 +114,21 @@ public class Graph {
                 break;
             } else {
                 has_hamiltionian_cycle = true;
-
             }
         }
         if (!has_hamiltionian_cycle) {
             failsafe++;
             if (failsafe > 100) {
-                System.out.println("Failed to generate a graph with a hamiltionian cycle");
+                System.out.println(
+                        "Failed to generate a graph with a hamiltionian cycle");
                 System.exit(0);
             }
             generateGraph(number_of_nodes, max_weight);
         }
 
-        //print the hamiltionian cycle graph
-        System.out.println("Generated graph with " + this.node_number + " nodes and max weight of " + parameters[1]);
+        // print the hamiltionian cycle graph
+        System.out.println("Generated graph with " + this.node_number +
+                " nodes and max weight of " + parameters[1]);
         for (int i = 0; i < this.node_number; i++) {
             for (int j = 0; j < this.node_number; j++) {
                 System.out.print(this.edge_matrix[i][j] + "\t");
@@ -142,5 +142,13 @@ public class Graph {
     public Node getNode(int i) {
         return nodes.get(i);
     }
-}
 
+    public void printGraph() {
+        for (int i = 0; i < this.node_number; i++) {
+            for (int j = 0; j < this.node_number; j++) {
+                System.out.print(this.edge_matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
