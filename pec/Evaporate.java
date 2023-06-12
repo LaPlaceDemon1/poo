@@ -2,7 +2,6 @@ package pec;
 
 import aco.*;
 import graph.*;
-import java.util.HashMap;
 import java.util.Random;
 
 public class Evaporate extends Event {
