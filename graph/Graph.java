@@ -107,12 +107,7 @@ public class Graph {
                 break;
             } else {
                 has_hamiltionian_cycle = true;
-                //print the hamiltionian cycle
-                System.out.println("hamiltionian cycle");
-                for (int j = 0; j < this.node_number; j++) {
-                    System.out.print(nodes.get(j).getId() + " ");
-                }
-                System.out.println();
+
             }
         }
         if (!has_hamiltionian_cycle) {
@@ -124,6 +119,14 @@ public class Graph {
             generateGraph(number_of_nodes, max_weight);
         }
 
+        //print the hamiltionian cycle graph
+        System.out.println("Generated graph with " + this.node_number + " nodes and max weight of " + parameters[1]);
+        for (int i = 0; i < this.node_number; i++) {
+            for (int j = 0; j < this.node_number; j++) {
+                System.out.print(this.edge_matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
 
         return parameters;
     }
