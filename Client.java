@@ -44,8 +44,7 @@ public class Client {
     Aco ant_colony = new Aco(parameters[0],parameters[2],parameters[3],
                               parameters[4],parameters[5],parameters[6],
                               parameters[7],parameters[8],parameters[9],
-                              parameters[10]
-                            );
+                              parameters[10], main_graph);
 
     Pheromones pheromones =
         new Pheromones(ant_colony.eta, ant_colony.rho,

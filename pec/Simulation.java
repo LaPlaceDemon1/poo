@@ -19,15 +19,16 @@ public class Simulation {
 
 	}
 
-	public void run() {
+	public void run(Graph graph) {
 		for(Ant ant: context.getAnts()) {
 			simqueue.add(new Move(0.0, ant, phero));
 		}
 		//cycle 19 times
-		printParameters(context);
+		printParameters(context,graph);
 		for (int i = 1; i < 20; i++) {
 			simqueue.add(new Observation(i * context.final_time/20,i,context));
 		}
+		simqueue.add(new End(context.getFinalTime(),context));  // end of simulation
 		while (simqueue.size() > 0) {
 			Event next = simqueue.removeFirst();
 			next.execute(simqueue);
@@ -35,7 +36,7 @@ public class Simulation {
 		}
 	}
 
-	public void printParameters(Aco context,) {
+	public void printParameters(Aco context, Graph graph) {
 		System.out.println("Parameters:");
 		System.out.println("Number of nodes:" + context.getNumNodes());
 		System.out.println("Nest node:" + context.getNestNode());
@@ -47,7 +48,8 @@ public class Simulation {
 		System.out.println("Rho:" + context.getRho());
 		System.out.println("Pheromone level:" + context.getPheromoneLevel());
 		System.out.println("Final time:" + context.getFinalTime());
-
+		System.out.println("with graph:");
+		graph.printGraph();
 	}
 	public void end(Aco context) {
 	}
