@@ -22,5 +22,6 @@ public class End extends Event {
 		System.out.println("Best Hamiltonian cycle:");
 		context.printBestCycle();
 		System.out.println("End of simulation");
+		sim.clear();
 	}
 }

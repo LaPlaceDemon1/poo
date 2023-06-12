@@ -145,6 +145,7 @@ public class Graph {
 
     public void printGraph() {
         for (int i = 0; i < this.node_number; i++) {
+            System.out.println("\t\t");
             for (int j = 0; j < this.node_number; j++) {
                 System.out.print(this.edge_matrix[i][j] + "\t");
             }
