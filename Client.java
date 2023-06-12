@@ -17,6 +17,8 @@ public class Client {
       for (i = 1; i < args.length; i++) {
         parameters[i - 1] = Double.parseDouble(args[i]);
       }
+      //generate graph
+      main_graph.generateGraph(parameters[0], parameters[1]);
     } else if (args[0].equals("-f")) {
 
       double[] parametres = main_graph.buildGraph(args[1]);
