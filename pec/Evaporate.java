@@ -10,8 +10,8 @@ public class Evaporate extends Event {
 	Pheromones pheromones;
 	Double exp_mean;
 	Evaporate(double _time, Pheromones _pheromones, Edge _phero_edge,Double _exp_mean){
+		super(_time);
 		phero_edge=_phero_edge;
-		this.time = _time;
 		pheromones=_pheromones;
 		exp_mean=_exp_mean;
 	}
@@ -26,4 +26,10 @@ public class Evaporate extends Event {
 		pheromones.evaporation(phero_edge);
 		schedule_next(sim,new Evaporate(time+randomValue, pheromones, phero_edge, exp_mean));
 	}
+
+	@Override
+	public int compareTo(IEvent other) {
+		return 0;
+	}
+
 }

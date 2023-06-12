@@ -6,7 +6,7 @@ public interface IEvent
 
     public void setTime(double _time);
 
-    public void execute();
+    public void execute(EventList sim);
 
     public int compareTo(IEvent other);
 }
