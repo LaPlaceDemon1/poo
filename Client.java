@@ -1,6 +1,7 @@
 import aco.*;
 import graph.*;
 import java.util.ArrayList;
+import pec.*;
 /*
 parameters:
 0  n number of nodes in the graph
@@ -45,13 +46,8 @@ public class Client {
                               parameters[4],parameters[5],parameters[6],
                               parameters[7],parameters[8],parameters[9],
                               parameters[10], main_graph);
-
-    Pheromones pheromones =
-        new Pheromones(ant_colony.eta, ant_colony.rho,
-                       ant_colony.pheromone_level, main_graph.getEdges()
-                      );
-
-
+    Simulation simulation = new Simulation(ant_colony,main_graph);
+    simulation.run(main_graph);
 
   } 
 }
