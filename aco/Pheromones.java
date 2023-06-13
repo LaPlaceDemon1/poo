@@ -10,13 +10,15 @@ import pec.*;
 public class Pheromones {
     double eta, rho, pheromone_level;
     Map<Edge, Double> pheromone_map;
+    Aco context;
 
     public Pheromones(double _eta, double _rho, double _pheromone_level,
-            ArrayList<Edge> edges) {
+            Aco _context, ArrayList<Edge> edges) {
         this.eta = _eta;
         this.rho = _rho;
         this.pheromone_level = _pheromone_level;
         this.pheromone_map = new HashMap<Edge, Double>();
+        this.context = _context;
         for (Edge edge : edges) {
             this.pheromone_map.put(edge, 0.0d);
         }
@@ -46,7 +48,7 @@ public class Pheromones {
                 ;
             sim.add(
                     new Evaporate(time + -this.eta * Math.log(1 - random.nextDouble()),
-                            this, edge, this.eta));
+                            this, context, edge, this.eta));
 
             total_weight += edge.getWeight();
         }

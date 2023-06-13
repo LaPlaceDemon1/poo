@@ -15,7 +15,7 @@ public class Simulation {
 		this.context = _context;
 		this.graph = _graph;
 		phero = new Pheromones(context.getEta(), context.getRho(),
-				context.getPheromoneLevel(), graph.getEdges());
+				context.getPheromoneLevel(), context, graph.getEdges());
 		simqueue = new EventList();
 	}
 
