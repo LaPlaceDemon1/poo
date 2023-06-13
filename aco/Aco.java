@@ -97,9 +97,12 @@ public class Aco {
     public void printTopCycles() {
         if (this.cycles.size() > 0) {
             ArrayList<Cycle> aux = new ArrayList<Cycle>();
-            for (int i = 0; (i < this.cycles.size()) || (i < 5); i++) {
+            for (int i = 0; (i < this.cycles.size()) && (i < 5); i++) {
                 aux.add(this.cycles.poll());
+            }
+            for (int i = 0; i < aux.size(); i++) {
                 aux.get(i).printCycle();
+                this.cycles.add(aux.get(i));
             }
         } else {
             System.out.println("\t\t{}");

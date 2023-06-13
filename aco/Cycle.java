@@ -18,11 +18,11 @@ public class Cycle {
       if (i < this.nodes.size() - 1) {
         System.out.print(", ");
       }
-      System.out.println("}: " + this.cost);
     }
+    System.out.println("}: " + this.cost);
   }
 
   public int compareTo(Cycle that) {
-    return Double.compare(that.cost, this.cost);
+    return Double.compare(this.cost, that.cost);
   }
 }
