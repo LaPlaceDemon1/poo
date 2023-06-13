@@ -1,4 +1,5 @@
 package aco;
+
 import graph.*;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -6,12 +7,13 @@ import java.util.PriorityQueue;
 public class Aco {
     public double num_nodes, nest_node, colony_size;
     public double alpha, beta, delta, eta, rho, pheromone_level, final_time;
-    public double num_movs, num_evap;
+    public int num_movs, num_evap;
     public PriorityQueue<Cycle> cycles;
     ArrayList<Ant> ants;
+
     public Aco(double _num_nodes, double _nest_node, double _alpha, double _beta,
             double _delta, double _eta, double _rho, double _pheromone_level,
-            double _colony_size, double _final_time, Graph graph){
+            double _colony_size, double _final_time, Graph graph) {
         this.num_nodes = _num_nodes;
         this.nest_node = _nest_node;
         this.colony_size = _colony_size;
@@ -22,13 +24,13 @@ public class Aco {
         this.rho = _rho;
         this.pheromone_level = _pheromone_level;
         this.final_time = _final_time;
+        this.num_movs = 0;
+        this.num_evap = 0;
         this.cycles = new PriorityQueue<Cycle>();
         ants = new ArrayList<>();
         for (int i = 0; i < this.colony_size; i++) {
-            ants.add(new Ant(
-                    (int)this.num_nodes,this.alpha, this.beta, this.delta,
-                    graph.getNode( (int)this.nest_node)
-            ));
+            ants.add(new Ant((int) this.num_nodes, this.alpha, this.beta, this.delta,
+                    graph.getNode((int) this.nest_node)));
         }
     }
 
@@ -82,6 +84,14 @@ public class Aco {
 
     public ArrayList<Ant> getAnts() {
         return this.ants;
+    }
+
+    public void incNumMovs() {
+        this.num_movs++;
+    }
+
+    public void incNumEvap() {
+        this.num_evap++;
     }
 
     public void printTopCycles() {

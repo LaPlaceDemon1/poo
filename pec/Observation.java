@@ -6,8 +6,9 @@ public class Observation extends Event {
   Aco context;
   int number;
 
-  public Observation(double _time, int number, Aco aco) {
+  public Observation(double _time, int _number, Aco aco) {
     super(_time);
+    this.number = _number;
     context = aco;
   }
 

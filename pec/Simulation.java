@@ -21,7 +21,7 @@ public class Simulation {
 
 	public void run() {
 		for (Ant ant : context.getAnts()) {
-			simqueue.add(new Move(0.0, ant, phero));
+			simqueue.add(new Move(0.0, ant, context, phero));
 		}
 		printParameters(this.context, this.graph);
 
