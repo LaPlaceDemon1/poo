@@ -1,6 +1,7 @@
 import aco.*;
 import graph.*;
 import pec.*;
+
 /*
 parameters:
 0  n number of nodes in the graph
@@ -30,7 +31,7 @@ public class Client {
       for (i = 1; i < args.length; i++) {
         parameters[i - 1] = Double.parseDouble(args[i]);
       }
-      //generate graph
+      // generate graph
       main_graph.generateGraph(parameters[0], parameters[1]);
     } else if (args[0].equals("-f")) {
 
@@ -41,12 +42,10 @@ public class Client {
       // error
     }
 
-    Aco ant_colony = new Aco(parameters[0],parameters[2],parameters[3],
-                              parameters[4],parameters[5],parameters[6],
-                              parameters[7],parameters[8],parameters[9],
-                              parameters[10], main_graph);
-    Simulation simulation = new Simulation(ant_colony,main_graph);
-    simulation.run(main_graph);
-
-  } 
+    Aco ant_colony = new Aco(parameters[0], parameters[2], parameters[3], parameters[4],
+        parameters[5], parameters[6], parameters[7], parameters[8],
+        parameters[9], parameters[10], main_graph);
+    Simulation simulation = new Simulation(ant_colony, main_graph);
+    simulation.run();
+  }
 }

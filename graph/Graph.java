@@ -42,17 +42,14 @@ public class Graph {
             this.edge_matrix = new double[(int) Math.round(parameters[0])][(int) Math.round(parameters[0])];
             this.node_number = (int) Math.round(parameters[0]);
             j = 0;
-            while ((line = reader.readLine()) != null) {
-
+            for (int i = 0; i < parameters[0]; i++) {
+                line = reader.readLine();
                 strings = line.split("\t");
-
-                for (int i = 0; i < parameters[0]; i++) {
-                    for (j = 0; j < parameters[0]; j++) {
-                        this.edge_matrix[j][i] = Double.parseDouble(strings[j]);
-                    }
+                for (j = 0; j < parameters[0]; j++) {
+                    this.edge_matrix[j][i] = Double.parseDouble(strings[j]);
                 }
-                System.out.println(line);
             }
+            System.out.println(line);
         } catch (IOException e) {
             e.printStackTrace();
         }
