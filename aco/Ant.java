@@ -28,6 +28,26 @@ public class Ant {
         this.visited_nodes.add(inicial_node);
     }
 
+    public ArrayList<Node> getVisitedNodes() {
+        return this.visited_nodes;
+    }
+
+    public ArrayList<Integer> getVisitedNodesIDs() {
+        ArrayList<Integer> visited_nodes_ids = new ArrayList<Integer>();
+        for (int i = 0; i < this.visited_nodes.size(); i++) {
+            visited_nodes_ids.add(this.visited_nodes.get(i).getId());
+        }
+        return visited_nodes_ids;
+    }
+
+    public double getCost() {
+        double cost = 0;
+        for (int i = 0; i < this.path_times.size(); i++) {
+            cost += this.path_times.get(i);
+        }
+        return cost;
+    }
+
     public double moveAnt(Pheromones pheromones, EventList sim, double time) {
         Edge next_edge = this.chooseNextEdge(pheromones);
         this.path.add(next_edge);

@@ -26,7 +26,7 @@ public class Aco {
         this.final_time = _final_time;
         this.num_movs = 0;
         this.num_evap = 0;
-        this.cycles = new PriorityQueue<Cycle>();
+        this.cycles = new PriorityQueue<Cycle>(Cycle::compareTo);
         ants = new ArrayList<>();
         for (int i = 0; i < this.colony_size; i++) {
             ants.add(new Ant((int) this.num_nodes, this.alpha, this.beta, this.delta,

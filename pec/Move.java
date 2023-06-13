@@ -18,7 +18,12 @@ public class Move extends Event {
 	public void execute(EventList sim) {
 		double next_time = ant.moveAnt(pheromones, sim, this.time);
 		this.context.incNumMovs();
-		this.schedule_next(sim,
-				new Move(time + next_time, ant, context, pheromones));
+		if (this.ant.getVisitedNodes().size() == ((int) this.context.getNumNodes() + 1)) {
+			Cycle cycle = new Cycle(this.ant.getVisitedNodesIDs(), this.ant.getCost());
+			this.context.addCycle(cycle);
+		} else {
+			this.schedule_next(sim,
+					new Move(time + next_time, ant, context, pheromones));
+		}
 	}
 }
