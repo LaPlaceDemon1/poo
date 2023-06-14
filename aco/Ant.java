@@ -34,16 +34,16 @@ public class Ant {
 
     public ArrayList<Integer> getVisitedNodesIDs() {
         ArrayList<Integer> visited_nodes_ids = new ArrayList<Integer>();
-        for (int i = 0; i < this.visited_nodes.size(); i++) {
-            visited_nodes_ids.add(this.visited_nodes.get(i).getId());
+        for (Node visitedNode : this.visited_nodes) {
+            visited_nodes_ids.add(visitedNode.getId());
         }
         return visited_nodes_ids;
     }
 
     public double getCost() {
         double cost = 0;
-        for (int i = 0; i < this.path_times.size(); i++) {
-            cost += this.path_times.get(i);
+        for (Double pathTime : this.path_times) {
+            cost += pathTime;
         }
         return cost;
     }
