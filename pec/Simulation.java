@@ -26,7 +26,7 @@ public class Simulation {
 		printParameters(this.context, this.graph);
 
 		for (int i = 1; i < 20; i++) {
-			simqueue.add(new Observation(i * context.final_time / 20, i, context));
+			simqueue.add(new Observation(i * context.getFinalTime()/ 20, i, context));
 		}
 		simqueue.add(new End(context.getFinalTime(), context)); // end of simulation
 		while (simqueue.size() > 0) {
@@ -50,10 +50,6 @@ public class Simulation {
 		System.out.println("with graph:");
 		graph.printGraph();
 	}
-
-	public void end(Aco context) {
-	}
-
 	public void checkpoint(Aco context, Double time) {
 		System.out.println("checkpoint:");
 		System.out.println("present instant:" + time);
