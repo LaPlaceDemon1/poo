@@ -30,7 +30,7 @@ public class Simulation {
 		}
 		simqueue.add(new End(context.getFinalTime(), context)); // end of simulation
 		while (simqueue.size() > 0) {
-			Event next = simqueue.removeFirst();
+			IEvent next = simqueue.removeFirst();
 			next.execute(simqueue);
 		}
 	}

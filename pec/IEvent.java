@@ -8,5 +8,5 @@ public interface IEvent
 
     void execute(EventList sim);
 
-    int compareTo(Event that);
+    int compareTo(IEvent that);
 }

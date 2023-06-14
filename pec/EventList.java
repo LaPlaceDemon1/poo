@@ -4,15 +4,15 @@ import java.util.PriorityQueue;
 
 public class EventList {
     // the priority queue
-    private final PriorityQueue<Event> events;
+    private final PriorityQueue<IEvent> events;
 
     // constructor
     public EventList() {
-        events = new PriorityQueue<Event>(Event::compareTo);
+        events = new PriorityQueue<IEvent>(IEvent::compareTo);
     }
 
     // add an event to the list
-    public void add(Event _event) {
+    public void add(IEvent _event) {
         events.add(_event);
     }
 
@@ -31,7 +31,7 @@ public class EventList {
     }
 
     // remove first
-    public Event removeFirst() {
+    public IEvent removeFirst() {
         return events.poll();
     }
 }
