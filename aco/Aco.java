@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Aco {
-    public double num_nodes, nest_node, colony_size;
-    public double alpha, beta, delta, eta, rho, pheromone_level, final_time;
-    public int num_movs, num_evap;
-    public PriorityQueue<Cycle> cycles;
+    double num_nodes, nest_node, colony_size;
+    double alpha, beta, delta, eta, rho, pheromone_level, final_time;
+    int num_movs, num_evap;
+    PriorityQueue<Cycle> cycles;
     ArrayList<Ant> ants;
 
     public Aco(double _num_nodes, double _nest_node, double _alpha, double _beta,
