@@ -50,11 +50,5 @@ public class Simulation {
 		System.out.println("with graph:");
 		graph.printGraph();
 	}
-	public void checkpoint(Aco context, Double time) {
-		System.out.println("checkpoint:");
-		System.out.println("present instant:" + time);
-		System.out.println("Top candidate cycles:");
-		System.out.println("Number of move events:" + context.getNumMovs());
-		System.out.println("Best Hamiltonian cycle: :");
-	}
+
 }
