@@ -54,8 +54,8 @@ public class Ant {
         // add the time it takes to traverse the edge to the path_times list, the
         // time is the product of edge wieght and an exponential distribution with
         // mean delta
-        this.path_times.add(next_edge.getWeight() *
-                (1 - Math.exp(Math.random() / (-this.delta))));
+        this.path_times.add(next_edge.getWeight() * (-this.delta) *
+                Math.log(1 - Math.random()));
         this.current_node = next_edge.getNext(this.current_node);
         this.visited_nodes.add(this.current_node);
         if (this.visited_nodes.size() == this.num_nodes + 1) {
