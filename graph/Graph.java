@@ -10,7 +10,7 @@ public class Graph implements IGraph{
     int node_number;
     int failsafe;
     ArrayList<Node> nodes;
-    ArrayList<Edge> edges;
+    ArrayList<IEdge> edges;
 
     public Graph() {
         this.node_number = 0;
@@ -75,7 +75,7 @@ public class Graph implements IGraph{
         }
     }
 
-    public ArrayList<Edge> getEdges() {
+    public ArrayList<IEdge> getEdges() {
         return edges;
     }
 
