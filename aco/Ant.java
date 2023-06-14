@@ -12,12 +12,10 @@ public class Ant {
     Node current_node;
     ArrayList<Node> visited_nodes;
     ArrayList<Edge> path;
-    ArrayList<Double> path_times;
 
     public Ant(int _num_nodes, double _alpha, double _beta, double _delta,
             Node inicial_node) {
         this.num_nodes = _num_nodes;
-        this.path_times = new ArrayList<Double>();
         this.alpha = _alpha;
         this.beta = _beta;
         this.delta = _delta;
@@ -41,29 +39,28 @@ public class Ant {
 
     public double getCost() {
         double cost = 0;
-        for (Double pathTime : this.path_times) {
-            cost += pathTime;
+        for (Edge edge : this.path) {
+            cost += edge.getWeight();
         }
         return cost;
     }
 
     public double moveAnt(Pheromones pheromones, EventList sim, double time) {
         Edge next_edge = this.chooseNextEdge(pheromones);
-        this.current_node = next_edge.getNext(this.current_node);
+        double next_time = next_edge.getWeight() * (-this.delta) * Math.log(1 - Math.random());
         if (this.visited_nodes.contains(next_edge.getNext(this.current_node))) {
             if (!(this.visited_nodes.size() == this.num_nodes)) {
-                return next_edge.getWeight() * (-this.delta) *
-                        Math.log(1 - Math.random());
+                this.current_node = next_edge.getNext(this.current_node);
+                return next_time;
             }
         }
         this.path.add(next_edge);
-        this.path_times.add(next_edge.getWeight() * (-this.delta) *
-                Math.log(1 - Math.random()));
+        this.current_node = next_edge.getNext(this.current_node);
         this.visited_nodes.add(this.current_node);
         if (this.visited_nodes.size() == this.num_nodes + 1) {
             pheromones.lay_pheromone(this.path, sim, time);
         }
-        return this.path_times.get(this.path_times.size() - 1);
+        return next_time;
     }
 
     private Edge chooseNextEdge(Pheromones pheromones) {
@@ -114,7 +111,6 @@ public class Ant {
         for (int i = this.visited_nodes.size(); i < index;) {
             this.visited_nodes.remove(i);
             this.path.remove(i - 1);
-            this.path_times.remove(i - 1);
         }
     }
 }
