@@ -5,13 +5,13 @@ import graph.*;
 import java.util.Random;
 
 public class Evaporate extends Event {
-	Edge phero_edge;
+	IEdge phero_edge;
 	Pheromones pheromones;
 	Aco context;
 	Double exp_mean;
 
 	public Evaporate(double _time, Pheromones _pheromones, Aco _context,
-			Edge _phero_edge, Double _exp_mean) {
+			IEdge _phero_edge, Double _exp_mean) {
 		super(_time);
 		phero_edge = _phero_edge;
 		context = _context;
