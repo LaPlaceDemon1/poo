@@ -25,7 +25,6 @@ public class Ant {
         this.visited_nodes.add(inicial_node);
         this.path = new ArrayList<Edge>();
         this.current_node = inicial_node;
-        this.visited_nodes.add(inicial_node);
     }
 
     public ArrayList<Node> getVisitedNodes() {
