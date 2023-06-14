@@ -9,9 +9,9 @@ public class Simulation {
 	Pheromones phero;
 	EventList simqueue;
 	Aco context;
-	Graph graph;
+	IGraph graph;
 
-	public Simulation(Aco _context, Graph _graph) {
+	public Simulation(Aco _context, IGraph _graph) {
 		this.context = _context;
 		this.graph = _graph;
 		phero = new Pheromones(context.getEta(), context.getRho(),
@@ -35,7 +35,7 @@ public class Simulation {
 		}
 	}
 
-	public void printParameters(Aco context, Graph graph) {
+	public void printParameters(Aco context, IGraph graph) {
 		System.out.println("Parameters:");
 		System.out.println("Number of nodes:" + context.getNumNodes());
 		System.out.println("Nest node:" + context.getNestNode());
