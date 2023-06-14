@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Graph implements IGraph{
+public class Graph implements IGraph {
     double[][] edge_matrix;
     int node_number;
     int failsafe;
