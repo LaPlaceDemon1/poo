@@ -100,9 +100,9 @@ public class Aco {
             for (int i = 0; (i < this.cycles.size()) && (i < 5); i++) {
                 aux.add(this.cycles.poll());
             }
-            for (int i = 0; i < aux.size(); i++) {
-                aux.get(i).printCycle();
-                this.cycles.add(aux.get(i));
+            for (Cycle cycle : aux) {
+                cycle.printCycle();
+                this.cycles.add(cycle);
             }
         } else {
             System.out.println("\t\t{}");
