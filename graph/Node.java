@@ -8,7 +8,7 @@ public class Node implements INode{
     public Node(int _id)
     {
         this.id = _id;
-        edges = new ArrayList<Edge>();
+        edges = new ArrayList<>();
     }
 
     public int getId() {

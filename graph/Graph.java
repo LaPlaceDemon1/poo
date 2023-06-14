@@ -41,7 +41,6 @@ public class Graph implements IGraph{
 
             this.edge_matrix = new double[(int) Math.round(parameters[0])][(int) Math.round(parameters[0])];
             this.node_number = (int) Math.round(parameters[0]);
-            j = 0;
             for (int i = 0; i < parameters[0]; i++) {
                 line = reader.readLine();
                 strings = line.split("\t");
