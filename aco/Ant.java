@@ -50,13 +50,16 @@ public class Ant {
 
     public double moveAnt(Pheromones pheromones, EventList sim, double time) {
         Edge next_edge = this.chooseNextEdge(pheromones);
+        this.current_node = next_edge.getNext(this.current_node);
+        if (this.visited_nodes.contains(next_edge.getNext(this.current_node))) {
+            if (!(this.visited_nodes.size() == this.num_nodes)) {
+                return next_edge.getWeight() * (-this.delta) *
+                        Math.log(1 - Math.random());
+            }
+        }
         this.path.add(next_edge);
-        // add the time it takes to traverse the edge to the path_times list, the
-        // time is the product of edge wieght and an exponential distribution with
-        // mean delta
         this.path_times.add(next_edge.getWeight() * (-this.delta) *
                 Math.log(1 - Math.random()));
-        this.current_node = next_edge.getNext(this.current_node);
         this.visited_nodes.add(this.current_node);
         if (this.visited_nodes.size() == this.num_nodes + 1) {
             pheromones.lay_pheromone(this.path, sim, time);
@@ -64,11 +67,6 @@ public class Ant {
         return this.path_times.get(this.path_times.size() - 1);
     }
 
-    // choose the next edge to be visited by the ant, based on the pheromone level
-    // in pheromone_map from Pheromones visited edges are not considered, if all
-    // edges are visited, choose one randomly and remove all nodes that form a
-    // cycle the probabilisties of choosing an edge are calculated using the
-    // formula: (pheromone_level+alpha)*(1/edge_weight+beta)
     private Edge chooseNextEdge(Pheromones pheromones) {
         List<Edge> edges = this.current_node.getEdges();
         List<Edge> unvisited_edges = new LinkedList<Edge>();
