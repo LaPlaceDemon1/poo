@@ -1,6 +1,6 @@
 package graph;
 
-public class Edge {
+public class Edge implements IEdge{
     double weight;
     Node node0, node1;
 

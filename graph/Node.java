@@ -1,17 +1,14 @@
 package graph;
+import java.util.ArrayList;
 
-import java.util.LinkedList;
-import java.util.List;
-
-public class Node
-{
+public class Node implements INode{
     int id;
-    List<Edge> edges;
+    ArrayList<Edge> edges;
 
     public Node(int _id)
     {
         this.id = _id;
-        edges = new LinkedList<Edge>();
+        edges = new ArrayList<Edge>();
     }
 
     public int getId() {
@@ -29,7 +26,7 @@ public class Node
     }
 
 
-    public List<Edge> getEdges()
+    public ArrayList<Edge> getEdges()
     {
         return edges;
     }
