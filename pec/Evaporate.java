@@ -18,11 +18,18 @@ public class Evaporate extends Event {
 		pheromones = _pheromones;
 		exp_mean = _exp_mean;
 	}
-
+	/**
+	 * schedules the next event, this method should be called by the execute method
+	 * @param sim the eventlist
+	 * @param next the next event
+	 */
 	private void schedule_next(EventList sim, Evaporate next) {
 		sim.add(next);
 	}
-
+	/**
+	 * executes the evaporation event
+	 * @param sim the eventlist
+	 */
 	@Override
 	public void execute(EventList sim) {
 		Random random = new Random();

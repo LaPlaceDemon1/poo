@@ -10,7 +10,10 @@ public class End extends Event {
 		context = aco;
 	}
 
-	// override execute
+	/**
+	 * ends the simulation
+	 * @param sim the eventlist
+	 */
 	@Override
 	public void execute(EventList sim) {
 		System.out.println("Final Event");
