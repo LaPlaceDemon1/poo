@@ -14,6 +14,10 @@ public class Move extends Event {
 		pheromones = _pheromones;
 	}
 
+	/**
+	 * executes the move event and schedules the next move event
+	 * @param sim the eventlist
+	 */
 	@Override
 	public void execute(EventList sim) {
 		double next_time = ant.moveAnt(pheromones, sim, this.time);

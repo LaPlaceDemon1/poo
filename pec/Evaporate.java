@@ -27,7 +27,7 @@ public class Evaporate extends Event {
 		sim.add(next);
 	}
 	/**
-	 * executes the evaporation event
+	 * executes the evaporation event and schedules the next evaporation event
 	 * @param sim the eventlist
 	 */
 	@Override
