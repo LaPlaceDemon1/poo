@@ -33,7 +33,7 @@ public class Graph implements IGraph {
                         i++;
                     }
                     parameters[i] = Double.parseDouble(strings[j]);
-                    System.out.print(parameters[i] + " ");
+                    // System.out.print(parameters[i] + " ");
                     j++;
                 }
                 System.out.println();
@@ -48,7 +48,7 @@ public class Graph implements IGraph {
                     this.edge_matrix[j][i] = Double.parseDouble(strings[j]);
                 }
             }
-            System.out.println(line);
+            // System.out.println(line);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -135,9 +135,9 @@ public class Graph implements IGraph {
 
     public void printGraph() {
         for (int i = 0; i < this.node_number; i++) {
-            System.out.println("\t\t");
+            // System.out.println("\t\t");
             for (int j = 0; j < this.node_number; j++) {
-                System.out.print(this.edge_matrix[i][j] + "\t");
+                System.out.print((int) Math.round(this.edge_matrix[i][j]) + "\t");
             }
             System.out.println();
         }
