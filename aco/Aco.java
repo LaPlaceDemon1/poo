@@ -34,66 +34,96 @@ public class Aco {
         }
     }
 
+    /**
+     * @return the num_nodes
+     */
     public double getNumNodes() {
         return this.num_nodes;
     }
-
+    /**
+     * @return the nest_node
+     */
     public double getNestNode() {
         return this.nest_node;
     }
-
+    /**
+     * @return the colony_size
+     */
     public double getColonySize() {
         return this.colony_size;
     }
-
+    /**
+     * @return pheromone wheight on next move
+     */
     public double getAlpha() {
         return this.alpha;
     }
-
+    /**
+     * @return wheight wheight on next move
+     */
     public double getBeta() {
         return this.beta;
     }
-
+    /**
+     * @return mean of the distribution of the time needed to move to the next node
+     */
     public double getDelta() {
         return this.delta;
     }
-
+    /**
+     * @return mean of the distribution of the time until next pheromone evaporation
+     */
     public double getEta() {
         return this.eta;
     }
-
+    /**
+     * @return constant of the pheromones decrease
+     */
     public double getRho() {
         return this.rho;
     }
-
+    /**
+     * @return constant of the pheromones laid
+     */
     public double getPheromoneLevel() {
         return this.pheromone_level;
     }
-
+    /**
+     * @return final instant
+     */
     public double getFinalTime() {
         return this.final_time;
     }
-
+    /**
+     * @return the number of movements
+     */
     public double getNumMovs() {
         return this.num_movs;
     }
-
+    /**
+     * @return the number of evaporation
+     */
     public double getNumEvap() {
         return this.num_evap;
     }
-
     public ArrayList<Ant> getAnts() {
         return this.ants;
     }
-
+    /**
+     * increment the number of movements
+     */
     public void incNumMovs() {
         this.num_movs++;
     }
-
+    /**
+     * increment the number of evaporation
+     */
     public void incNumEvap() {
         this.num_evap++;
     }
-
+    /**
+     * prints the best cycles
+     */
     public void printTopCycles() {
         if (this.cycles.size() > 0) {
             ArrayList<Cycle> aux = new ArrayList<>();
@@ -108,7 +138,9 @@ public class Aco {
             System.out.println("\t\t{}");
         }
     }
-
+    /**
+     * prints the best cycle
+     */
     public void printBestCycle() {
         if (this.cycles.size() > 0) {
             Cycle best = this.cycles.poll();
@@ -118,7 +150,9 @@ public class Aco {
             System.out.println("\t\t{}");
         }
     }
-
+    /**
+     * adds a cycle to the list of cycles
+     */
     public void addCycle(Cycle cycle) {
         this.cycles.add(cycle);
     }

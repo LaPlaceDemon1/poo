@@ -14,15 +14,15 @@ public class Ant {
     ArrayList<IEdge> path;
 
     public Ant(int _num_nodes, double _alpha, double _beta, double _delta,
-            INode inicial_node) {
+            INode initial_node) {
         this.num_nodes = _num_nodes;
         this.alpha = _alpha;
         this.beta = _beta;
         this.delta = _delta;
-        this.visited_nodes = new ArrayList<INode>();
-        this.visited_nodes.add(inicial_node);
-        this.path = new ArrayList<IEdge>();
-        this.current_node = inicial_node;
+        this.visited_nodes = new ArrayList<>();
+        this.visited_nodes.add(initial_node);
+        this.path = new ArrayList<>();
+        this.current_node = initial_node;
     }
 
     public ArrayList<INode> getVisitedNodes() {
@@ -30,7 +30,7 @@ public class Ant {
     }
 
     public ArrayList<Integer> getVisitedNodesIDs() {
-        ArrayList<Integer> visited_nodes_ids = new ArrayList<Integer>();
+        ArrayList<Integer> visited_nodes_ids = new ArrayList<>();
         for (INode visitedNode : this.visited_nodes) {
             visited_nodes_ids.add(visitedNode.getId());
         }
@@ -48,11 +48,11 @@ public class Ant {
     /**
      * Performs the movement of the ant, choosing the next edge to be visited.
      * For the move to be completed, the new node and edge are added to the lists.
-     * If an hamiltonian cycle is completed, the pheromones are laid on the path.
+     * If a hamiltonian cycle is completed, the pheromones are laid on the path.
      *
-     * @param pheromones
-     * @param sim
-     * @param time
+     * @param pheromones pheromone map
+     * @param sim simulation event list
+     * @param time  current time
      *
      */
     public double moveAnt(Pheromones pheromones, EventList sim, double time) {
@@ -77,13 +77,13 @@ public class Ant {
     /**
      * This method chooses the next edge to be visited by the ant
      * based on the pheromone levels and the weight of the edges available.
-     * @param pheromones
-     * @return
+     * @param pheromones pheromone map
+     * @return  the edge to be traversed
      */
 
     private IEdge chooseNextEdge(Pheromones pheromones) {
         List<IEdge> edges = this.current_node.getEdges();
-        List<IEdge> unvisited_edges = new LinkedList<IEdge>();
+        List<IEdge> unvisited_edges = new LinkedList<>();
         for (IEdge edge : edges) {
             if (!this.visited_nodes.contains(edge.getNext(this.current_node))) {
                 unvisited_edges.add(edge);
@@ -126,7 +126,7 @@ public class Ant {
      * When the ant finds a cycle that is not hamiltonian
      * it removes the cycle to forget the bad path. 
      * 
-     * @param next_edge
+     * @param next_edge the edge that closes the cycle
      * 
      */
 
