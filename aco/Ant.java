@@ -66,7 +66,7 @@ public class Ant {
 
     /**
      * This method chooses the next edge to be visited by the ant
-     * based on the pheromone levels and the weight of the edge.
+     * based on the pheromone levels and the weight of the edges available.
      * @param pheromones
      * @return
      */
