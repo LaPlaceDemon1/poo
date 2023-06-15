@@ -98,7 +98,7 @@ public class Graph implements IGraph {
                     double weight = Math.round(Math.random() * max_weight);
                     this.edge_matrix[i][j] = weight;
                     this.edge_matrix[j][i] = weight;
-                    Edge e = new Edge(weight, nodes.get(i), nodes.get(j));
+                    IEdge e = new Edge(weight, nodes.get(i), nodes.get(j));
                     edges.add(e);
                     nodes.get(i).addEdge(e);
                     nodes.get(j).addEdge(e);
