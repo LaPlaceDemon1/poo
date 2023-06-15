@@ -24,11 +24,13 @@ public class Pheromones {
         }
     }
 
-    // evaporation event: the given edge has its correspnding pheromone level from
-    // pheromone_map reduced by rho, if the pheromone level is less than 0, it is
-    // set to 0 and the method returns false, otherwise it returns true
-    public boolean evaporation(IEdge edge) {
-        double new_pheromone_level = this.pheromone_map.get(edge) - this.rho;
+    /** When an evaporation event happens the given edge has its correspnding pheromone level from
+    *   pheromone map reduced by rho and the pheromone level isn't less than 0,
+    *   otherwise it is set to 0 and the method returns false.
+    *   @param edge the edge to have its pheromone level reduced
+    */
+       public boolean evaporation(IEdge edge) {
+       double new_pheromone_level = this.pheromone_map.get(edge) - this.rho;
         if (new_pheromone_level < 0) {
             this.pheromone_map.put(edge, 0.0d);
             return false;
@@ -38,8 +40,16 @@ public class Pheromones {
         }
     }
 
-    // lay pheromone event: the given edge has its corresponding pheromone level
-    // from pheromone_map increased by pheromone_level
+    /**
+     * The lay pheronome event happens when an ant has finished its path.
+     * The pheromene level is increased and if the previous pheromone level
+     * is 0, an evaporation event is scheduled.
+     *
+     * @param edges
+     * @param sim
+     * @param time
+     */
+
     void lay_pheromone(ArrayList<IEdge> edges, EventList sim, double time) {
         Random random = new Random();
         double total_weight = 0;
