@@ -9,29 +9,29 @@ import pec.*;
 public class Ant {
     int num_nodes;
     double alpha, beta, delta;
-    Node current_node;
-    ArrayList<Node> visited_nodes;
-    ArrayList<Edge> path;
+    INode current_node;
+    ArrayList<INode> visited_nodes;
+    ArrayList<IEdge> path;
 
     public Ant(int _num_nodes, double _alpha, double _beta, double _delta,
-            Node inicial_node) {
+            INode inicial_node) {
         this.num_nodes = _num_nodes;
         this.alpha = _alpha;
         this.beta = _beta;
         this.delta = _delta;
-        this.visited_nodes = new ArrayList<Node>();
+        this.visited_nodes = new ArrayList<INode>();
         this.visited_nodes.add(inicial_node);
-        this.path = new ArrayList<Edge>();
+        this.path = new ArrayList<IEdge>();
         this.current_node = inicial_node;
     }
 
-    public ArrayList<Node> getVisitedNodes() {
+    public ArrayList<INode> getVisitedNodes() {
         return this.visited_nodes;
     }
 
     public ArrayList<Integer> getVisitedNodesIDs() {
         ArrayList<Integer> visited_nodes_ids = new ArrayList<Integer>();
-        for (Node visitedNode : this.visited_nodes) {
+        for (INode visitedNode : this.visited_nodes) {
             visited_nodes_ids.add(visitedNode.getId());
         }
         return visited_nodes_ids;
@@ -39,14 +39,14 @@ public class Ant {
 
     public double getCost() {
         double cost = 0;
-        for (Edge edge : this.path) {
+        for (IEdge edge : this.path) {
             cost += edge.getWeight();
         }
         return cost;
     }
 
     public double moveAnt(Pheromones pheromones, EventList sim, double time) {
-        Edge next_edge = this.chooseNextEdge(pheromones);
+        IEdge next_edge = this.chooseNextEdge(pheromones);
         double next_time = next_edge.getWeight() * (-this.delta) * Math.log(1 - Math.random());
         if (this.visited_nodes.contains(next_edge.getNext(this.current_node))) {
             if (!(this.visited_nodes.size() == this.num_nodes)) {
@@ -63,10 +63,10 @@ public class Ant {
         return next_time;
     }
 
-    private Edge chooseNextEdge(Pheromones pheromones) {
-        List<Edge> edges = this.current_node.getEdges();
-        List<Edge> unvisited_edges = new LinkedList<Edge>();
-        for (Edge edge : edges) {
+    private IEdge chooseNextEdge(Pheromones pheromones) {
+        List<IEdge> edges = this.current_node.getEdges();
+        List<IEdge> unvisited_edges = new LinkedList<IEdge>();
+        for (IEdge edge : edges) {
             if (!this.visited_nodes.contains(edge.getNext(this.current_node))) {
                 unvisited_edges.add(edge);
             }
@@ -75,25 +75,25 @@ public class Ant {
             // verify if edge.getNext is the same as the first element of
             // visited_nodes
             if (visited_nodes.size() == this.num_nodes) {
-                for (Edge edge : edges) {
+                for (IEdge edge : edges) {
                     if (edge.getNext(this.current_node).isEqual(visited_nodes.get(0))) {
                         return edge;
                     }
                 }
             }
 
-            Edge next_edge = edges.get((int) (Math.random() * edges.size()));
+            IEdge next_edge = edges.get((int) (Math.random() * edges.size()));
             this.removeCycle(next_edge);
             return next_edge;
         } else {
             double sum = 0;
-            for (Edge edge : unvisited_edges) {
+            for (IEdge edge : unvisited_edges) {
                 sum += (pheromones.pheromone_map.get(edge) + this.alpha) /
                         (edge.getWeight() + this.beta);
             }
             double random = Math.random() * sum;
             double partial_sum = 0;
-            for (Edge edge : unvisited_edges) {
+            for (IEdge edge : unvisited_edges) {
                 partial_sum += (pheromones.pheromone_map.get(edge) + this.alpha) /
                         (edge.getWeight() + this.beta);
                 if (partial_sum >= random) {
@@ -104,8 +104,8 @@ public class Ant {
         }
     }
 
-    private void removeCycle(Edge next_edge) {
-        Node node_to_keep = next_edge.getNext(this.current_node);
+    private void removeCycle(IEdge next_edge) {
+        INode node_to_keep = next_edge.getNext(this.current_node);
         int index = this.visited_nodes.indexOf(node_to_keep);
 
         for (int i = this.visited_nodes.size() - 1; i > index; i--) {

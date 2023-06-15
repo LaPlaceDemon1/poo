@@ -40,7 +40,7 @@ public class Pheromones {
 
     // lay pheromone event: the given edge has its corresponding pheromone level
     // from pheromone_map increased by pheromone_level
-    void lay_pheromone(ArrayList<Edge> edges, EventList sim, double time) {
+    void lay_pheromone(ArrayList<IEdge> edges, EventList sim, double time) {
         Random random = new Random();
         double total_weight = 0;
         for (IEdge edge : edges) {

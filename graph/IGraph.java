@@ -5,6 +5,6 @@ public interface IGraph {
     double[] buildGraph(String file_path);
     ArrayList<IEdge> getEdges();
     double[] generateGraph(double number_of_nodes, double max_weight);
-    Node getNode(int i);
+    INode getNode(int i);
     void printGraph();
 }

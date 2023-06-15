@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Node implements INode{
     int id;
-    ArrayList<Edge> edges;
+    ArrayList<IEdge> edges;
 
     public Node(int _id)
     {
@@ -15,18 +15,18 @@ public class Node implements INode{
         return id;
     }
 
-    public void addEdge(Edge new_Edge)
+    public void addEdge(IEdge new_Edge)
     {
         this.edges.add(new_Edge);
     }
 
-    public boolean isEqual(Node other_node)
+    public boolean isEqual(INode other_node)
     {
         return (this.id == other_node.getId());
     }
 
 
-    public ArrayList<Edge> getEdges()
+    public ArrayList<IEdge> getEdges()
     {
         return edges;
     }

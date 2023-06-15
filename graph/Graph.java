@@ -9,7 +9,7 @@ public class Graph implements IGraph {
     double[][] edge_matrix;
     int node_number;
     int failsafe;
-    ArrayList<Node> nodes;
+    ArrayList<INode> nodes;
     ArrayList<IEdge> edges;
 
     public Graph() {
@@ -65,7 +65,7 @@ public class Graph implements IGraph {
             for (int j = 0; j < this.node_number; j++) {
                 if (this.edge_matrix[i][j] != 0) {
                     if (i < j) {
-                        Edge e = new Edge(edge_matrix[i][j], nodes.get(i), nodes.get(j));
+                        IEdge e = new Edge(edge_matrix[i][j], nodes.get(i), nodes.get(j));
                         edges.add(e);
                         nodes.get(i).addEdge(e);
                         nodes.get(j).addEdge(e);
@@ -139,7 +139,7 @@ public class Graph implements IGraph {
         return parameters;
     }
 
-    public Node getNode(int i) {
+    public INode getNode(int i) {
         return nodes.get(i);
     }
 
