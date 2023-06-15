@@ -1,0 +1,263 @@
+Parameters:
+Number of nodes:10.0
+Nest node:1.0
+Colony size:200.0
+Alpha:1.0
+Beta:1.0
+Delta:0.5
+Eta:2.0
+Rho:10.0
+Pheromone level:0.5
+Final time:200.0
+with graph:
+0	7	2	9	6	2	0	2	4	3	
+7	0	8	0	0	1	0	0	9	6	
+2	8	0	3	6	4	1	0	0	7	
+9	0	3	0	6	1	8	3	0	4	
+6	0	6	6	0	0	0	0	5	0	
+2	1	4	1	0	0	0	0	9	0	
+0	0	1	8	0	0	0	2	3	8	
+2	0	0	3	0	0	2	0	5	6	
+4	9	0	0	5	9	3	5	0	7	
+3	6	7	4	0	0	8	6	7	0	
+Observation 1
+	Present instant:10.0
+Number of move events:1856.0
+Number of evaporation events:3443.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 2
+	Present instant:20.0
+Number of move events:1979.0
+Number of evaporation events:12157.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 3
+	Present instant:30.0
+Number of move events:1993.0
+Number of evaporation events:22036.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 4
+	Present instant:40.0
+Number of move events:2000.0
+Number of evaporation events:31920.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 5
+	Present instant:50.0
+Number of move events:2000.0
+Number of evaporation events:41912.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 6
+	Present instant:60.0
+Number of move events:2000.0
+Number of evaporation events:52164.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 7
+	Present instant:70.0
+Number of move events:2000.0
+Number of evaporation events:62174.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 8
+	Present instant:80.0
+Number of move events:2000.0
+Number of evaporation events:72107.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 9
+	Present instant:90.0
+Number of move events:2000.0
+Number of evaporation events:82284.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 10
+	Present instant:100.0
+Number of move events:2000.0
+Number of evaporation events:92194.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 11
+	Present instant:110.0
+Number of move events:2000.0
+Number of evaporation events:102276.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 12
+	Present instant:120.0
+Number of move events:2000.0
+Number of evaporation events:112363.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 13
+	Present instant:130.0
+Number of move events:2000.0
+Number of evaporation events:122476.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 14
+	Present instant:140.0
+Number of move events:2000.0
+Number of evaporation events:132610.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 15
+	Present instant:150.0
+Number of move events:2000.0
+Number of evaporation events:142513.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 16
+	Present instant:160.0
+Number of move events:2000.0
+Number of evaporation events:152447.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 17
+	Present instant:170.0
+Number of move events:2000.0
+Number of evaporation events:162418.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Observation 18
+	Present instant:180.0
+Number of move events:2000.0
+Number of evaporation events:172497.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+Observation 19
+	Present instant:190.0
+Number of move events:2000.0
+Number of evaporation events:182605.0
+	Top candidate cycles:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 7, 2, 0, 6, 8, 3, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+Final Event
+	Present instant:200.0
+Number of move events:2000.0
+Number of evaporation events:192463.0
+	Top candidate cycles:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+		{1, 7, 5, 9, 4, 6, 0, 2, 8, 3, 1}: 2.0
+		{1, 3, 8, 2, 7, 4, 6, 0, 9, 5, 1}: 4.0
+		{1, 7, 5, 4, 9, 0, 6, 2, 8, 3, 1}: 4.0
+		{1, 4, 9, 5, 3, 8, 2, 0, 6, 7, 1}: 5.0
+Best Hamiltonian cycle:
+		{1, 6, 0, 5, 9, 4, 7, 2, 8, 3, 1}: 2.0
+End of simulation
