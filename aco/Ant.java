@@ -45,6 +45,16 @@ public class Ant {
         return cost;
     }
 
+    /**
+     * Performs the movement of the ant, choosing the next edge to be visited.
+     * For the move to be completed, the new node and edge are added to the lists.
+     * If an hamiltonian cycle is completed, the pheromones are laid on the path.
+     *
+     * @param pheromones
+     * @param sim
+     * @param time
+     *
+     */
     public double moveAnt(Pheromones pheromones, EventList sim, double time) {
         IEdge next_edge = this.chooseNextEdge(pheromones);
         double next_time = next_edge.getWeight() * (-this.delta) * Math.log(1 - Math.random());
