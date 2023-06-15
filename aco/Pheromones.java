@@ -24,13 +24,15 @@ public class Pheromones {
         }
     }
 
-    /** When an evaporation event happens the given edge has its correspnding pheromone level from
-    *   pheromone map reduced by rho and the pheromone level isn't less than 0,
-    *   otherwise it is set to 0 and the method returns false.
-    *   @param edge the edge to have its pheromone level reduced
-    */
-       public boolean evaporation(IEdge edge) {
-       double new_pheromone_level = this.pheromone_map.get(edge) - this.rho;
+    /**
+     * When an evaporation event happens the given edge has its correspnding
+     * pheromone level from pheromone map reduced by rho and the pheromone level
+     * isn't less than 0, otherwise it is set to 0 and the method returns false.
+     * 
+     * @param edge the edge to have its pheromone level reduced
+     */
+    public boolean evaporation(IEdge edge) {
+        double new_pheromone_level = this.pheromone_map.get(edge) - this.rho;
         if (new_pheromone_level < 0) {
             this.pheromone_map.put(edge, 0.0d);
             return false;
@@ -69,7 +71,12 @@ public class Pheromones {
         }
     }
 
-    // get the pheromone level of the given edge
+    /**
+     * This method returns the pheromone level of the given edge.
+     * 
+     * @param edge
+     * @return
+     */
     double get_pheromone_level(IEdge edge) {
         return this.pheromone_map.get(edge);
     }
