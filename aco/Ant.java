@@ -63,6 +63,14 @@ public class Ant {
         return next_time;
     }
 
+
+    /**
+     * This method chooses the next edge to be visited by the ant
+     * based on the pheromone levels and the weight of the edge.
+     * @param pheromones
+     * @return
+     */
+
     private IEdge chooseNextEdge(Pheromones pheromones) {
         List<IEdge> edges = this.current_node.getEdges();
         List<IEdge> unvisited_edges = new LinkedList<IEdge>();
