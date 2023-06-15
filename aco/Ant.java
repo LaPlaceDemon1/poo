@@ -73,6 +73,14 @@ public class Ant {
         return next_time;
     }
 
+
+    /**
+     * This method chooses the next edge to be visited by the ant
+     * based on the pheromone levels and the weight of the edges available.
+     * @param pheromones
+     * @return
+     */
+
     private IEdge chooseNextEdge(Pheromones pheromones) {
         List<IEdge> edges = this.current_node.getEdges();
         List<IEdge> unvisited_edges = new LinkedList<IEdge>();
@@ -113,6 +121,15 @@ public class Ant {
             return null;
         }
     }
+
+    /**
+     * When the ant finds a cycle that is not hamiltonian
+     * it removes the cycle to forget the bad path. 
+     * 
+     * @param next_edge
+     * 
+     */
+
 
     private void removeCycle(IEdge next_edge) {
         INode node_to_keep = next_edge.getNext(this.current_node);
